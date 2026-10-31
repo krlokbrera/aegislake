@@ -14,7 +14,7 @@ The system is an offline batch reference for identity telemetry. It provides a l
 | Identity conflict | Same event_id, changed content | First accepted record retained; later conflict quarantined |
 | Silver → features | Closed 15-minute windows; UTC | Fail if numerical features are not finite |
 | Features → benchmark | Complete labels; nonempty temporal partitions | Fail explicitly, rather than silently inventing labels |
-| Validation → selection | Both labeled classes | Reject one-class calibration |
+| Validation → selection | Both labeled classes; actual capped queue for every threshold | Reject one-class calibration |
 | Scoring → queue | Threshold plus per-day top-k | Stable deterministic tie-break |
 | Human feedback | Known alert identifier and bounded decision values | Reject unknown cases |
 | Azure publication | Verified synthetic benchmark run | Reject real-data runs and arbitrary destination URLs |

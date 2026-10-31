@@ -44,7 +44,9 @@ This is one temporal holdout, not repeated cross-validation or an unbiased estim
 
 ## Capacity policy
 
-A validation threshold must respect the configured daily maximum on the observed validation period. Tied score blocks can produce a conservative threshold, including zero alerts. This is an explicit possible result.
+Every validation threshold is evaluated with the same stable daily top-k queue policy used at test time. Calibration optimizes validation F1 on that final queue, rather than rejecting useful score ties because their uncapped volume exceeds capacity. A dedicated regression test covers this case.
+
+The operating-point policy was revised after inspecting development results with seed 42. The bundled example uses seed 7, fixed before inspecting its outputs. Both are illustrative simulator experiments, not an independent real-world benchmark.
 
 Test and future batches also apply a hard daily top-k cap among eligible windows. The policy is retrospective within a completed daily batch. It is not a real-time rate limiter, and a high volume of noisy windows may push true attacks out of the queue.
 

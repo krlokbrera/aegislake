@@ -1,27 +1,46 @@
 # Validation status and evidence ledger
 
-Verified on 2026-10-31 in an isolated GitHub Actions Python 3.12 Linux environment.
+Prepared: 2026-10-31.
 
-Evidence: [https://github.com/krlokbrera/aegislake/actions/runs/41214818529](https://github.com/krlokbrera/aegislake/actions/runs/41214818529)
+## Current evidence
 
-| Check | Observed result |
-| --- | --- |
-| Python regression and end-to-end tests | 31 passed |
-| Coverage | 87% of measured statements; CLI excluded |
-| Ruff | Passed |
-| Dependency audit | No known vulnerabilities reported for the resolved environment |
-| Default synthetic demo | Completed; report and manifest archived |
-| Azure Bicep compilation | Passed without deployment |
-| Docker build | Passed |
-| Non-root container demo | Completed |
-| Python 3.11/3.12 CI matrix | See the PR checks for the latest head |
-| Real-data effectiveness | Not validated |
-| Azure student credit and live deployment | Not verified; no Azure resources created |
+| Item | Status | Evidence required to mark verified |
+| --- | --- | --- |
+| Primary-source research | Completed in design documentation | Sources and decisions in RESEARCH_ES.md |
+| Implementation | Prepared | Source tree and review diff |
+| Python runtime execution | Not yet verified | Actual pytest and CLI output from target runner |
+| Lint | Not yet verified | Actual Ruff result |
+| Dependency vulnerabilities | Not yet verified | Actual pip-audit result for resolved environment |
+| Bicep compilation | Not yet verified | Actual az bicep build result |
+| Docker build | Not yet verified | Successful image build log |
+| End-to-end synthetic demo | Not yet verified | Generated report and manifest |
+| Real-data validation | Not performed | Authorized benchmark, label review and backtest |
+| Azure account and student credit | Not verified | Active offer and available credit in the user's tenant |
+| Azure resource deployment | Not performed | What-if, deployment output and verified private blob read |
+| Repository publication and PR | Pending target availability | Returned GitHub URLs and head commit |
 
-A separate CI run initially identified vulnerable preinstalled setuptools in the Python 3.11 runner. CI now creates a virtual environment and upgrades packaging tools before installing and auditing project dependencies.
+The local execution environment became unavailable during preparation. No test pass count, measured accuracy, latency or cost has been invented. GitHub connectivity confirms account access but does not itself prove that a new repository exists or that Azure is connected.
 
-The exact Python 3.12 reference environment is stored in requirements-verified-py312-linux.txt. This is an environment snapshot, not a hash-locked cross-platform dependency specification. Original project code is installed separately.
+Source preparation includes the complete implementation, regression tests, CI definition, infrastructure, and research. This file must retain pending statuses until execution is possible.
 
-The generated examples/demo report contains synthetic data only. Its scores describe the simulator, not real-world effectiveness. The manifest refers to full run artifacts retained by CI or reproducible locally.
+## Required first verification
 
-Remaining review: authorized real-data backtesting, campaign-level metrics and uncertainty, a signed model/artifact registry, hash-locked production dependencies, and live Azure for Students access/cost verification.
+1. Install the project in an isolated Python 3.11/3.12 environment.
+2. Run Ruff, pytest, pip-audit and the default demo.
+3. Open report.html and inspect values, escaping and layout.
+4. Check split boundaries, quality counts, manifest hashes and actual daily queue volume.
+5. Compile the infrastructure and build the container.
+6. Archive the exact resolved dependencies with the run manifest.
+7. Replace this table with observed run identifiers and links.
+8. Only then use measured results in the CV.
+
+## Explicit review work
+
+- Confirm one temporal holdout is enough for the demonstration narrative; design multiple walk-forward folds before broader claims.
+- Review whether the fixed UTC schedule and training-derived novelty reference fit a future real dataset.
+- Evaluate confidence intervals and campaign-level recall.
+- Produce a reviewed exact dependency lock after the first successful resolution.
+- Verify Azure offer, remaining credit, regional availability and retention before provisioning.
+- Verify the optional job image is publicly pullable and does not contain telemetry.
+
+These are concrete review items; a draft PR may retain them until evidence exists. A failed CI check should be repaired on its branch and rerun before merging.

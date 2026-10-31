@@ -15,16 +15,13 @@ def select_threshold(frame: pd.DataFrame, scores: np.ndarray, capacity: int) -> 
     if len(scores) != len(frame) or not np.isfinite(scores).all():
         raise ValueError("invalid score array")
     y = frame["label"].to_numpy(dtype=int)
-    days = frame["window_start"].dt.strftime("%Y-%m-%d").to_numpy()
     candidates = np.unique(np.quantile(scores, np.linspace(0, 1, 101)))
     candidates = np.append(candidates, np.nextafter(float(np.max(scores)), np.inf))
     best = (-1.0, -1.0, -1.0)
     chosen = float(candidates[-1])
     for threshold in candidates:
-        predicted = scores >= threshold
-        daily_max = pd.Series(predicted).groupby(days).sum().max()
-        if daily_max > capacity:
-            continue
+        # Calibrate the actual queue policy, including its stable daily top-k cap.
+        predicted = queue_mask(frame, scores, float(threshold), capacity)
         precision, _, f1, _ = precision_recall_fscore_support(y, predicted, average="binary", zero_division=0)
         objective = (float(f1), float(precision), float(threshold))
         if objective > best:

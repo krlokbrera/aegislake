@@ -51,3 +51,14 @@ def test_drift_identical_reference_is_zero():
     values = np.arange(100, dtype=float)
     assert population_stability_index(values, values) == pytest.approx(0)
     assert population_stability_index(np.zeros(100), np.ones(100)) == 1
+
+
+def test_tied_scores_cannot_silently_empty_a_useful_capacity_limited_queue():
+    frame = data().assign(label=[1, 1, 1, 0] * 2)
+    scores = np.ones(8)
+    threshold = select_threshold(frame, scores, capacity=2)
+    result = metrics(frame, scores, threshold, capacity=2)
+    assert result["alerts"] == 4
+    assert result["precision"] == 1
+    assert result["recall"] == pytest.approx(4 / 6)
+    assert result["daily_alerts_max"] == 2
