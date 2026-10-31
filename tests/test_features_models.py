@@ -1,3 +1,5 @@
+import warnings
+
 import numpy as np
 import pandas as pd
 
@@ -46,6 +48,41 @@ def test_source_fanout_and_closed_windows(event):
 
 def test_feature_allowlist_never_contains_target_or_identifiers():
     assert not set(FEATURES) & {"label", "scenario", "user", "source", "destination", "event_id", "timestamp"}
+
+
+def test_arrow_transfer_preserves_utc_and_unknown_labels_without_warnings(event):
+    events = frame([
+        event | {"event_id": "history", "timestamp": "2026-01-04T10:00:00Z"},
+        event | {"event_id": "future", "timestamp": "2026-01-05T07:16:00+01:00", "label": None, "mfa": None},
+    ])
+    with warnings.catch_warnings():
+        warnings.simplefilter("error")
+        result = build_features(events, pd.Timestamp("2026-01-05T00:00:00Z"))
+    future = result.loc[result["window_start"] == pd.Timestamp("2026-01-05T06:15:00Z")].iloc[0]
+    assert future["window_end"] == pd.Timestamp("2026-01-05T06:30:00Z")
+    assert str(result["window_start"].dt.tz) == "UTC"
+    assert all(result[name].dtype == np.dtype("float64") for name in FEATURES)
+    assert pd.isna(future["label"])
+    assert future["mfa_missing_rate"] == 1
+    assert future["no_mfa_rate"] == 0
+    assert future["off_hours"] == 1
+
+
+def test_off_hours_uses_utc_even_when_connection_starts_in_another_timezone(event, monkeypatch):
+    import aegislake.features as module
+
+    original_connect = module.duckdb.connect
+
+    def non_utc_connection():
+        connection = original_connect()
+        connection.execute("SET TimeZone='Europe/Madrid'")
+        return connection
+
+    monkeypatch.setattr(module.duckdb, "connect", non_utc_connection)
+    result = build_features(frame([event | {"timestamp": "2026-01-05T06:16:00Z"}]),
+                            pd.Timestamp("2026-01-06T00:00:00Z"))
+    assert result.iloc[0]["off_hours"] == 1
+    assert result.iloc[0]["window_start"].isoformat() == "2026-01-05T06:15:00+00:00"
 
 
 def test_models_fit_and_scores_are_bounded(completed_run):
