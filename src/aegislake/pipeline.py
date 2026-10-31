@@ -46,7 +46,7 @@ def run(
             raise ValueError("source changed during snapshot")
         train, validation, test = temporal_partitions(events, train_days, validation_days)
         if any(part["label"].isna().any() for part in (train, validation, test)):
-            raise ValueError("benchmark pipeline requires labeled data; unlabelled production scoring is future work")
+            raise ValueError("benchmark requires labeled data; use the score command for future unlabeled batches")
         models = Models.fit(train, seed)
         validation_scores = models.score(validation)
         test_scores = models.score(test)

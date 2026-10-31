@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from datetime import timedelta
+
 import duckdb
 import numpy as np
 import pandas as pd
@@ -60,9 +62,9 @@ def build_features(events: pd.DataFrame, train_before: pd.Timestamp) -> pd.DataF
 def temporal_partitions(events: pd.DataFrame, train_days: int, validation_days: int):
     if train_days < 2 or validation_days < 1:
         raise ValueError("train_days >= 2 and validation_days >= 1 are required")
-    origin = events["timestamp"].min().floor("D")
-    train_end = origin + pd.Timedelta(days=train_days)
-    validation_end = train_end + pd.Timedelta(days=validation_days)
+    origin = events["timestamp"].min().to_pydatetime().replace(hour=0, minute=0, second=0, microsecond=0)
+    train_end = pd.Timestamp(origin + timedelta(days=train_days))
+    validation_end = pd.Timestamp(origin + timedelta(days=train_days + validation_days))
     frame = build_features(events, train_end)
     # Align split to whole UTC days, so an aggregate never spans a split.
     train = frame[frame["window_end"] <= train_end].copy()
