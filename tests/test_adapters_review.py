@@ -56,7 +56,7 @@ def test_review_ledger_is_append_only_at_application_level(tmp_path):
 def test_report_escapes_untrusted_identifiers(tmp_path):
     payload = "<img src=x onerror=alert(1)>"
     report = {"champion": payload, "capacity": 1, "run_id": "test", "test": {}, "data_notice": "test"}
-    alert = {"user": payload, "window_start": "time", "score": 0.9,
+    alert = {"user": payload, "window_start": "2026-01-01T00:00:00Z", "score": 0.9,
              "alert_id": "test", "reasons": [payload], "attack_hypotheses": []}
     render_report(tmp_path, report, [alert])
     text = (tmp_path / "report.html").read_text()

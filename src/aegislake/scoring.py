@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import importlib.metadata
+import hashlib
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -65,10 +67,26 @@ def score(reference: Path, source: Path, destination: Path, *, allow_domain_shif
     (destination / "gold").mkdir()
     features.to_parquet(destination / "gold" / "scored_features.parquet", index=False)
     write_json(destination / "gold" / "alerts.json", alerts)
+    from aegislake.report import render_report
+
+    scoring_report = {
+        "run_id": "score-" + hashlib.sha256((manifest["run_id"] + file_sha256(source)).encode()).hexdigest()[:20],
+        "champion": champion,
+        "capacity": report["capacity"], "test": {}, "quality": quality,
+        "config": {"synthetic": False},
+        "data_notice": ("UNLABELED SCORING BATCH. Effectiveness is unmeasured. "
+                        + ("Synthetic-trained reference; domain shift was explicitly allowed."
+                           if manifest["config"]["synthetic"] else "Reference collection scope requires review.")),
+        "split_boundaries": {"test_first_window": features["window_start"].min().isoformat(),
+                             "test_last_window_end": features["window_end"].max().isoformat()},
+    }
+    render_report(destination, scoring_report, alerts, kind="scoring")
+    # The local explorer discovers scoring batches only after this completion marker exists.
     write_json(destination / "scoring.json", {
         "reference_run_id": manifest["run_id"], "input_sha256": file_sha256(source),
         "alerts": len(alerts), "windows": len(features), "quality": quality,
         "warning": "Experimental offline scoring. Domain shift requires separate validation.",
         "metrics": None, "synthetic_reference": manifest["config"]["synthetic"],
+        "created_at": datetime.now(timezone.utc).isoformat(),
     })
     return destination

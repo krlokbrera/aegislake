@@ -1,5 +1,3 @@
-# Generated synthetic example
+# Synthetic inspection bundle
 
-Open report.html and follow the MITRE page. Keep all files together.
-This is an inspection bundle, not a complete scoring reference. The manifest describes the full run.
-Regenerate the full bronze/silver/gold artifacts locally with seed 7.
+Generated with release 0.2.0 and seed 7. Open report.html, dashboard.html or mitre.html. This subset omits bronze/silver/features and is not a scoring reference. Its manifest describes the complete run.

@@ -29,18 +29,20 @@ def metric(label: str, value: object, note: str, accent: str = "") -> str:
             f'<small>{esc(note)}</small></div>')
 
 
-def shell(report: dict, page: str, title: str, body: str) -> str:
+def shell(report: dict, page: str, title: str, body: str, *, extra_style: str = "",
+          extra_script: str = "", allow_api: bool = False) -> str:
     nav = "".join(
         f'<a href="{href}" {"aria-current=page" if page == key else ""}>'
         f'<span class="nav-icon" aria-hidden="true">{icon}</span>{label}</a>'
         for key, href, icon, label in (("overview", "report.html", "◫", "Overview"),
+                                      ("dashboards", "dashboard.html", "▥", "Dashboards"),
                                       ("mitre", "mitre.html", "⌘", "MITRE ATT&CK"))
     )
     mode = "Synthetic demo" if report.get("config", {}).get("synthetic") else "Offline evaluation"
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
-<title>AegisLake · {esc(title)}</title><style>{STYLE}</style></head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; {'connect-src &#39;self&#39;;' if allow_api else ''} base-uri 'none'; form-action 'none'">
+<title>AegisLake · {esc(title)}</title><style>{STYLE}{extra_style}</style></head>
 <body><a class="skip" href="#main">Skip to content</a><aside class="sidebar">
 <a class="brand" href="report.html"><span class="brandmark" aria-hidden="true">A</span>AegisLake<span class="brand-dot">.</span></a>
 <div class="nav-label">INVESTIGATION WORKSPACE</div><nav aria-label="Main navigation">{nav}</nav>
@@ -49,7 +51,7 @@ def shell(report: dict, page: str, title: str, body: str) -> str:
 <span class="pill"><span class="status-dot"></span>{mode}</span></header>
 <main id="main">{body}<footer><span>AegisLake / Evidence before escalation.</span>
 <span>Closed 15-minute windows · UTC · <code>{esc(report['run_id'])}</code></span></footer></main></div>
-<script>{SCRIPT}</script></body></html>'''
+<script>{SCRIPT}{extra_script}</script></body></html>'''
 
 
 def daily_chart(report: dict, alerts: list[dict]) -> str:
@@ -245,10 +247,13 @@ The YAML starts with no deployed detection (-1) and no registered visibility (0)
 The source pages may change; this offline snapshot does not update automatically.</div></aside></div>'''
 
 
-def render_report(run_dir: Path, report: dict, alerts: list[dict]) -> None:
+def render_report(run_dir: Path, report: dict, alerts: list[dict], *, kind: str = "evaluation") -> None:
+    from aegislake.dashboard import write_dashboard
+
     write_attack_exports(run_dir, report, alerts)
     (run_dir / "report.html").write_text(shell(report, "overview", "Threat overview", overview(report, alerts)),
                                          encoding="utf-8")
     (run_dir / "mitre.html").write_text(shell(report, "mitre", "MITRE ATT&CK", mitre(report, alerts)),
                                         encoding="utf-8")
     (run_dir / "report.json").write_text(json.dumps(report, indent=2, allow_nan=False), encoding="utf-8")
+    write_dashboard(run_dir, report, alerts, kind=kind)
