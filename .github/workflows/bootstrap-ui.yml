@@ -144,3 +144,4 @@ jobs:
           git add -u aegislake-ui-source.json .github/workflows/bootstrap-ui.yml
           git commit -m 'Ship approved dashboard, ATT&CK mappings and DeTTCT export'
           git push origin HEAD:${{ github.ref_name }}
+# Approved CI artifact configuration is now present on the branch.
