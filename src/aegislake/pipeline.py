@@ -92,6 +92,7 @@ def run(
                 "validation_first_window": validation["window_start"].min().isoformat(),
                 "validation_last_window_end": validation["window_end"].max().isoformat(),
                 "test_first_window": test["window_start"].min().isoformat(),
+                "test_last_window_end": test["window_end"].max().isoformat(),
             },
         }
         render_report(staging, report, alerts)

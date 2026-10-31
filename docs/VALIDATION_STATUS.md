@@ -1,27 +1,30 @@
 # Validation status and evidence ledger
 
-Verified on 2026-10-31 in an isolated GitHub Actions Python 3.12 Linux environment.
+Release 0.1.2 verified on 2026-10-31 in an isolated GitHub Actions Python 3.12 Linux environment.
 
-Evidence: [https://github.com/krlokbrera/aegislake/actions/runs/41215188019](https://github.com/krlokbrera/aegislake/actions/runs/41215188019)
+Evidence: https://github.com/krlokbrera/aegislake/actions/runs/41222003014
 
 | Check | Observed result |
 | --- | --- |
-| Python regression and end-to-end tests | 32 passed |
-| Coverage | 87% of measured statements; CLI excluded |
+| Regression, rendering, DeTT&CT and cloud publication tests | 49 passed |
+| Coverage | 91% of measured statements; CLI excluded |
 | Ruff | Passed |
 | Dependency audit | No known vulnerabilities reported for the resolved environment |
-| Default synthetic demo | Completed; report and manifest archived |
-| Azure Bicep compilation | Passed without deployment |
-| Docker build | Passed |
-| Non-root container demo | Completed |
-| Python 3.11/3.12 CI matrix | See the PR checks for the latest head |
+| Seed-7 synthetic demo | Completed; both HTML pages and mapping exports generated |
+| Bicep compilation | Passed without signing in or deploying |
+| Docker build and non-root execution | Passed |
+| Python 3.11/3.12 permanent CI | Inspect the latest PR checks for the final source head |
+| DeTT&CT YAML | Parsed and structurally tested against the official v1.2 example; external CLI not executed |
 | Real-data effectiveness | Not validated |
-| Azure student credit and live deployment | Not verified; no Azure resources created |
+| Azure live deployment | Not performed |
 
-A separate CI run initially identified vulnerable preinstalled setuptools in the Python 3.11 runner. CI now creates a virtual environment and upgrades packaging tools before installing and auditing project dependencies.
+The exact reference environment is requirements-verified-py312-linux.txt. It is an environment snapshot,
+not a hash-locked cross-platform specification. The project is installed separately.
 
-The exact Python 3.12 reference environment is stored in requirements-verified-py312-linux.txt. This is an environment snapshot, not a hash-locked cross-platform dependency specification. Original project code is installed separately.
+The sample under examples/demo contains synthetic inspection outputs, including full-precision alerts.
+Its manifest refers to the complete reproducible run, including files not copied into that sample bundle.
+Synthetic metrics do not establish operational detection coverage. DeTT&CT scores remain draft -1/0
+until an actual SOC deployment and telemetry are assessed; see docs/DETTCT_ES.md.
 
-The generated examples/demo report uses seed 7 fixed before evaluating the revised queue calibration, and contains synthetic data only. Its scores describe the simulator, not real-world effectiveness. The manifest refers to full run artifacts retained by CI or reproducible locally.
-
-Remaining review: authorized real-data backtesting, campaign-level metrics and uncertainty, a signed model/artifact registry, hash-locked production dependencies, and live Azure for Students access/cost verification.
+Remaining review: authorized real-data backtesting, campaign-level metrics and uncertainty, artifact
+signing, hash-locked production dependencies, and live Azure student credit and deployment validation.

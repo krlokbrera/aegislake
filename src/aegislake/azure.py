@@ -8,7 +8,8 @@ from pathlib import Path
 
 from aegislake.scoring import verify_run
 
-PUBLISH_FILES = ("report.html", "report.json", "quality.json", "gold/alerts.json")
+PUBLISH_FILES = ("report.html", "mitre.html", "report.json", "quality.json", "gold/alerts.json",
+                 "attack-mapping.json", "dettect-techniques.yaml")
 
 
 def publish(run_dir: Path, account: str, container: str = "reports") -> list[str]:
@@ -30,7 +31,7 @@ def publish(run_dir: Path, account: str, container: str = "reports") -> list[str
             for relative in PUBLISH_FILES:
                 path = run_dir / relative
                 blob = f"{manifest['run_id']}/{relative}"
-                mime = "text/html" if path.suffix == ".html" else "application/json"
+                mime = {".html": "text/html", ".yaml": "application/yaml"}.get(path.suffix, "application/json")
                 with path.open("rb") as handle:
                     client.get_blob_client(container, blob).upload_blob(
                         handle, overwrite=True, content_settings=ContentSettings(content_type=mime)

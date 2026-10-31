@@ -1,5 +1,5 @@
 {
-  "run_id": "d77082794a88d32f0ea4",
+  "run_id": "f108bad8036565a4e2b0",
   "champion": "logistic_regression",
   "capacity": 25,
   "validation": {
@@ -83,7 +83,7 @@
       "daily_alerts_mean": 24.666666666666668,
       "daily_alerts_max": 25,
       "capacity_per_day": 25,
-      "threshold": 0.18838803347567423,
+      "threshold": 0.188388033475676,
       "confusion_matrix": {
         "tn": 3143,
         "fp": 6,
@@ -173,7 +173,7 @@
       "daily_alerts_mean": 24.333333333333332,
       "daily_alerts_max": 25,
       "capacity_per_day": 25,
-      "threshold": 0.18838803347567423,
+      "threshold": 0.188388033475676,
       "confusion_matrix": {
         "tn": 3200,
         "fp": 7,
@@ -206,7 +206,7 @@
     "capacity": 25,
     "seed": 7,
     "synthetic": true,
-    "version": "0.1.1"
+    "version": "0.1.2"
   },
   "features": [
     "events",
@@ -225,6 +225,7 @@
     "train_last_window_end": "2026-01-22T23:45:00+00:00",
     "validation_first_window": "2026-01-23T00:15:00+00:00",
     "validation_last_window_end": "2026-01-28T23:45:00+00:00",
-    "test_first_window": "2026-01-29T01:15:00+00:00"
+    "test_first_window": "2026-01-29T01:15:00+00:00",
+    "test_last_window_end": "2026-02-03T23:45:00+00:00"
   }
 }

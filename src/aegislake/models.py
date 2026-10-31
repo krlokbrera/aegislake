@@ -11,6 +11,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+from aegislake.attack import describe_mapping
 from aegislake.features import FEATURES
 
 
@@ -80,7 +81,7 @@ def explain(row: pd.Series) -> dict:
         reasons.append("Statistical anomaly; no named rule matched")
     return {
         "reasons": reasons,
-        "attack_hypotheses": sorted(set(techniques)),
+        "attack_hypotheses": sorted(set(techniques)), "attack_mapping": describe_mapping(techniques),
         "next_steps": [
             "Validate activity with the identity owner and approved change records",
             "Correlate endpoint and identity telemetry before escalation",
