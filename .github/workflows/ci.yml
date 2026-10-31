@@ -46,6 +46,8 @@ jobs:
           path: |
             runs/**/report.html
             runs/**/mitre.html
+            runs/**/dashboard.html
+            runs/**/dashboard.json
             runs/**/attack-mapping.json
             runs/**/dettect-techniques.yaml
             runs/**/report.json
