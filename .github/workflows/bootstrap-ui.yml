@@ -1,0 +1,146 @@
+name: Verify approved dashboard and DeTTCT release
+on:
+  push:
+    paths:
+      - .github/workflows/bootstrap-ui.yml
+      - aegislake-ui-source.json
+permissions:
+  contents: write
+concurrency:
+  group: dashboard-release-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Materialize approved source safely
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path.cwd().resolve()
+          for relative, text in json.loads(Path('aegislake-ui-source.json').read_text()).items():
+              target = (root / relative).resolve()
+              if not target.is_relative_to(root) or '.git' in target.relative_to(root).parts:
+                  raise ValueError('invalid source path')
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(text, encoding='utf-8')
+          PY
+      - name: Install isolated runtime and verification dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip setuptools wheel
+          .venv/bin/python -m pip install '.[dev,azure]'
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - name: Lint and full regression suite
+        run: |
+          ruff check src tests scripts
+          pytest --cov=aegislake --cov-report=term-missing --cov-report=xml --junitxml=test-results.xml
+      - name: Audit resolved dependencies
+        run: pip-audit --progress-spinner off
+      - name: Regenerate full precision synthetic example
+        run: aegislake demo --seed 7 --output runs
+      - name: Compile Azure templates without deploying
+        run: az bicep build --file infra/main.bicep --stdout > /tmp/aegislake-template.json
+      - name: Build and execute non-root container
+        run: |
+          docker build --tag aegislake:release .
+          docker run --rm aegislake:release demo --days 15 --users 12 --train-days 9 --validation-days 3
+      - name: Record measured release evidence and remove staging
+        env:
+          EVIDENCE_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, re, shutil, subprocess
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          candidates = [p.parent for p in Path('runs').glob('*/manifest.json')]
+          if len(candidates) != 1:
+              raise ValueError('expected one completed synthetic run')
+          run = candidates[0]
+          manifest = json.loads((run / 'manifest.json').read_text())
+          if manifest['config'].get('synthetic') is not True:
+              raise ValueError('only synthetic examples may be committed')
+          destination = Path('examples/demo')
+          destination.mkdir(parents=True, exist_ok=True)
+          for name in ('report.html', 'mitre.html', 'report.json', 'manifest.json', 'attack-mapping.json',
+                       'dettect-techniques.yaml', 'quality.json'):
+              shutil.copy2(run / name, destination / name)
+          shutil.copy2(run / 'gold/alerts.json', destination / 'alerts.json')
+          (destination / 'README.md').write_text(
+              '# Generated synthetic example\n\nOpen report.html and follow the MITRE page. Keep all files together.\n'
+              'This is an inspection bundle, not a complete scoring reference. The manifest describes the full run.\n'
+              'Regenerate the full bronze/silver/gold artifacts locally with seed 7.\n', encoding='utf-8')
+          suites = ET.parse('test-results.xml').getroot().findall('testsuite')
+          tests = sum(int(s.get('tests', 0)) for s in suites)
+          if sum(int(s.get('failures', 0)) + int(s.get('errors', 0)) for s in suites):
+              raise ValueError('tests did not pass')
+          coverage = float(ET.parse('coverage.xml').getroot().get('line-rate'))
+          evidence = os.environ['EVIDENCE_URL']
+          status = f'''# Validation status and evidence ledger
+          
+          Release 0.1.2 verified on 2026-10-31 in an isolated GitHub Actions Python 3.12 Linux environment.
+          
+          Evidence: {evidence}
+          
+          | Check | Observed result |
+          | --- | --- |
+          | Regression, rendering, DeTT&CT and cloud publication tests | {tests} passed |
+          | Coverage | {coverage:.0%} of measured statements; CLI excluded |
+          | Ruff | Passed |
+          | Dependency audit | No known vulnerabilities reported for the resolved environment |
+          | Seed-7 synthetic demo | Completed; both HTML pages and mapping exports generated |
+          | Bicep compilation | Passed without signing in or deploying |
+          | Docker build and non-root execution | Passed |
+          | Python 3.11/3.12 permanent CI | Inspect the latest PR checks for the final source head |
+          | DeTT&CT YAML | Parsed and structurally tested against the official v1.2 example; external CLI not executed |
+          | Real-data effectiveness | Not validated |
+          | Azure live deployment | Not performed |
+          
+          The exact reference environment is requirements-verified-py312-linux.txt. It is an environment snapshot,
+          not a hash-locked cross-platform specification. The project is installed separately.
+          
+          The sample under examples/demo contains synthetic inspection outputs, including full-precision alerts.
+          Its manifest refers to the complete reproducible run, including files not copied into that sample bundle.
+          Synthetic metrics do not establish operational detection coverage. DeTT&CT scores remain draft -1/0
+          until an actual SOC deployment and telemetry are assessed; see docs/DETTCT_ES.md.
+          
+          Remaining review: authorized real-data backtesting, campaign-level metrics and uncertainty, artifact
+          signing, hash-locked production dependencies, and live Azure student credit and deployment validation.
+          '''
+          Path('docs/VALIDATION_STATUS.md').write_text(status, encoding='utf-8')
+          readme = Path('README.md')
+          headline = (f'> Verified synthetic release 0.1.2: {tests} tests pass with {coverage:.0%} measured coverage; '
+                      f'dependency audit, Bicep build and non-root Docker execution pass. [Execution evidence]({evidence}). '
+                      'Live Azure deployment remains pending.')
+          readme.write_text(re.sub(r'^> Verified synthetic demo:.*$', headline, readme.read_text(), flags=re.M), encoding='utf-8')
+          environment = subprocess.check_output(['python', '-m', 'pip', 'freeze'], text=True)
+          lines = [line for line in environment.splitlines() if not line.lower().startswith('aegislake')]
+          Path('requirements-verified-py312-linux.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          Path('aegislake-ui-source.json').unlink()
+          Path('.github/workflows/bootstrap-ui.yml').unlink()
+          print(f'Verified release: {tests} tests; {coverage:.0%} coverage; run {manifest["run_id"]}')
+          PY
+      - name: Archive synthetic evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: aegislake-approved-dashboard-release
+          path: |
+            examples/demo
+            coverage.xml
+            test-results.xml
+            requirements-verified-py312-linux.txt
+          retention-days: 14
+      - name: Publish verified source and example on this branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src tests docs examples pyproject.toml README.md requirements-verified-py312-linux.txt .github/workflows/ci.yml
+          git add -u aegislake-ui-source.json .github/workflows/bootstrap-ui.yml
+          git commit -m 'Ship approved dashboard, ATT&CK mappings and DeTTCT export'
+          git push origin HEAD:${{ github.ref_name }}
