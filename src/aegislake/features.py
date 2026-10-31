@@ -23,8 +23,10 @@ def build_features(events: pd.DataFrame, train_before: pd.Timestamp) -> pd.DataF
     enriched["is_new_destination"] = enriched["known_pair"].isna().astype(int)
     connection = duckdb.connect()
     try:
+        connection.execute("SET TimeZone='UTC'")
         connection.register("events", enriched)
-        frame = connection.execute("""
+        # Transfer through Arrow to avoid DuckDB's legacy pandas conversion path.
+        frame = connection.sql("""
             WITH base AS (
                 SELECT *, time_bucket(INTERVAL '15 minutes', timestamp) AS window_start
                 FROM events
@@ -51,9 +53,12 @@ def build_features(events: pd.DataFrame, train_before: pd.Timestamp) -> pd.DataF
                 ON b.window_start = s.window_start AND b.source = s.source
             GROUP BY b.window_start, b."user"
             ORDER BY b.window_start, b."user"
-        """).fetchdf()
+        """).to_arrow_table().to_pandas()
     finally:
         connection.close()
+    frame[FEATURES] = frame[FEATURES].astype("float64")
+    for name in ("window_start", "window_end"):
+        frame[name] = pd.to_datetime(frame[name], utc=True)
     if not np.isfinite(frame[FEATURES].to_numpy(dtype=float)).all():
         raise ValueError("non-finite feature values")
     return frame
