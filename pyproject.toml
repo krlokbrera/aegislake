@@ -9,7 +9,7 @@ description = "Reproducible identity threat analytics with a security data lake 
 requires-python = ">=3.11,<3.14"
 license = "MIT"
 dependencies = [
-  "duckdb>=1.4,<2",
+  "duckdb>=1.4,<3",
   "numpy>=1.26,<3",
   "pandas>=2.2,<3",
   "pyarrow>=21,<25",

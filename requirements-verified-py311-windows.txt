@@ -1,6 +1,6 @@
 colorama==0.4.6
 coverage==7.11.0
-duckdb==1.5.6
+duckdb==2.0.0
 iniconfig==2.3.0
 joblib==1.4.2
 numpy==1.26.1
