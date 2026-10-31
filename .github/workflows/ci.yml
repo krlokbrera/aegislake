@@ -45,6 +45,9 @@ jobs:
           name: aegislake-synthetic-demo
           path: |
             runs/**/report.html
+            runs/**/mitre.html
+            runs/**/attack-mapping.json
+            runs/**/dettect-techniques.yaml
             runs/**/report.json
             runs/**/manifest.json
             runs/environment.txt
