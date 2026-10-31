@@ -1,0 +1,76 @@
+name: Bootstrap and verify AegisLake
+on:
+  push:
+    branches: [feature/identity-analytics]
+    paths: [aegislake-source.json, .github/workflows/bootstrap.yml]
+permissions:
+  contents: write
+concurrency:
+  group: aegislake-bootstrap
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Restore reviewed source files
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root = pathlib.Path.cwd().resolve()
+          files = json.loads((root / "aegislake-source.json").read_text(encoding="utf-8"))
+          for name, content in files.items():
+              path = root / name
+              if name.startswith("-") or ".git" in path.parts or not path.resolve().is_relative_to(root):
+                  raise ValueError("unsafe source path")
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(content, encoding="utf-8")
+          PY
+      - name: Publish implementation on the development branch
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          files = json.load(open("aegislake-source.json", encoding="utf-8"))
+          subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+          subprocess.run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], check=True)
+          subprocess.run(["git", "add", "--", *files.keys()], check=True)
+          if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode:
+              subprocess.run(["git", "commit", "-m", "Implement identity analytics pipeline, tests and research"], check=True)
+              subprocess.run(["git", "push", "origin", "HEAD:feature/identity-analytics"], check=True)
+          PY
+      - name: Install isolated dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install ".[dev,azure]"
+      - name: Lint
+        run: .venv/bin/ruff check src tests scripts
+      - name: Run regression and end-to-end tests
+        run: .venv/bin/pytest --cov=aegislake --cov-report=term-missing --cov-report=xml --junitxml=/tmp/aegislake-tests.xml
+      - name: Audit resolved dependencies
+        run: .venv/bin/pip-audit --progress-spinner off
+      - name: Run default synthetic demonstration
+        run: |
+          .venv/bin/aegislake demo --output runs
+          .venv/bin/python -m pip freeze > runs/environment.txt
+      - name: Compile Azure infrastructure
+        run: az bicep build --file infra/main.bicep --stdout > /tmp/aegislake-template.json
+      - name: Build non-root image
+        run: docker build --tag aegislake:verified .
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: aegislake-verification
+          path: |
+            runs/**/report.html
+            runs/**/report.json
+            runs/**/manifest.json
+            runs/environment.txt
+            coverage.xml
+            /tmp/aegislake-tests.xml
+          retention-days: 14
