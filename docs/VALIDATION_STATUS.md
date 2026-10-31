@@ -5,7 +5,7 @@ Evidence: https://github.com/krlokbrera/aegislake/actions/runs/41227547021
 
 | Check | Observed result |
 | --- | --- |
-| Regression, HTTP isolation and scoring tests | 74 passed |
+| Regression, HTTP isolation and scoring tests | 61 passed |
 | Python statement coverage | 90%; CLI excluded |
 | Ruff | Passed |
 | Dependency audit | No known vulnerabilities reported for the resolved environment |
@@ -21,3 +21,5 @@ hash-locked production specification. requirements-verified-py311-windows.txt re
 The inspection bundle is synthetic and omits some files described by its complete-run manifest.
 Alert counts and ranking scores do not establish operational detection coverage. DeTT&CT scores
 remain an unassessed draft. See DASHBOARDS_ES.md and DETTCT_ES.md for scope and limits.
+
+Test counts use the pytest summary; JUnit may also enumerate successful subtest entries.

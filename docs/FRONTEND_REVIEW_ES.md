@@ -16,9 +16,11 @@ La suite local completa pasa 61 pruebas con 90 % de cobertura Python. Incluye pe
 aislamiento de rutas y orígenes, descubrimiento de nuevos lotes y regresión del pipeline de scoring.
 El panel copiable de exportación se comprobó en navegador: al filtrar T1078 produce cinco filas,
 todas con esa hipótesis y sin métricas globales heredadas. La navegación MITRE → cola conserva
-la clave del lote y el filtro de técnica. El gestor de descargas del navegador y el diseño móvil de esta
-nueva sección no se dan por verificados. Las comprobaciones móviles descritas abajo corresponden
-a Overview/MITRE de la entrega anterior. Consulta [la guía de dashboards](DASHBOARDS_ES.md).
+la clave del lote y el filtro de técnica. En un marco de 390 px el documento tiene 375 px útiles y
+375 px de contenido, sin desbordamiento horizontal; el filtro T1078 y el panel de exportación
+funcionan también dentro de ese marco. El gestor de descargas del navegador no se da por verificado;
+el JSON copiable permite inspeccionar y recuperar la selección. Las comprobaciones móviles descritas
+abajo corresponden a Overview/MITRE de la entrega anterior. Consulta [la guía de dashboards](DASHBOARDS_ES.md).
 
 ## Overview y MITRE de la entrega anterior
 
