@@ -1,6 +1,6 @@
 # AegisLake
 
-> Verified dashboard release 0.2.0: 74 tests pass with 90% measured Python coverage. [Release evidence](https://github.com/krlokbrera/aegislake/actions/runs/41227547021).
+> Verified dashboard release 0.2.0: 61 regression tests pass with 90% measured Python coverage. [Release evidence](https://github.com/krlokbrera/aegislake/actions/runs/41227547021).
 
 ## Interactive SOC dashboards
 
