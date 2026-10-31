@@ -29,6 +29,10 @@ jobs:
               if not target.is_relative_to(root) or '.git' in target.relative_to(root).parts:
                   raise ValueError('invalid source path')
               target.parent.mkdir(parents=True, exist_ok=True)
+              if relative == '.github/workflows/ci.yml':
+                  if target.read_text(encoding='utf-8') != text:
+                      raise ValueError('CI configuration must already be approved on the branch')
+                  continue
               target.write_text(text, encoding='utf-8')
           PY
       - name: Install isolated runtime and verification dependencies
