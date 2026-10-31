@@ -1,5 +1,9 @@
 # AegisLake
 
+Dependency maintenance **0.2.1** adds the reviewed pandas 3, DuckDB 2 and PyArrow 26 ranges and
+updates the SHA-pinned GitHub Actions. Historical environment records and the 0.2.0 inspection bundle
+remain unchanged. [Dependabot review and compatibility decisions](docs/DEPENDENCY_REVIEW_ES.md).
+
 > Verified dashboard release 0.2.0: 61 regression tests pass with 90% measured Python coverage. [Release evidence](https://github.com/krlokbrera/aegislake/actions/runs/41227547021).
 
 ## Interactive SOC dashboards
