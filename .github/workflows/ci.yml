@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         python: ["3.11", "3.12"]
     steps:
@@ -22,7 +23,11 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install project and checks
-        run: python -m pip install ".[dev]"
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip setuptools wheel
+          .venv/bin/python -m pip install ".[dev,azure]"
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
       - name: Lint
         run: ruff check src tests scripts
       - name: Unit and end-to-end tests
@@ -57,3 +62,5 @@ jobs:
         run: az bicep build --file infra/main.bicep --stdout > /tmp/aegislake-template.json
       - name: Build non-root container
         run: docker build --tag aegislake:ci .
+      - name: Run container as its non-root user
+        run: docker run --rm aegislake:ci demo --days 15 --users 12 --train-days 9 --validation-days 3
