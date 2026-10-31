@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisLake canonical authentication event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp",
+    "user",
+    "source",
+    "destination",
+    "success",
+    "mfa",
+    "country"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "user": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "destination": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "country": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timezone required; application accepts years 1970 through 2100."
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "mfa": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "label": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "enum": [
+        0,
+        1,
+        null
+      ]
+    },
+    "scenario": {
+      "type": "string",
+      "maxLength": 200
+    }
+  }
+}
