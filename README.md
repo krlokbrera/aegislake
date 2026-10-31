@@ -4,7 +4,7 @@
 
 A portfolio project by Carlo Alessandro Cabrera. AegisLake turns authentication events into a small security data lake, compares detection methods under an analyst workload budget, and produces an offline investigation dashboard.
 
-> Status: implementation prepared; automated checks and Azure deployment must be verified in the target environment. No real-world effectiveness figures are claimed. The default demo is entirely synthetic.
+> Verified synthetic demo: 31 tests pass with 87% measured coverage; dependency audit, Bicep build, and non-root Docker execution pass. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41214818529). Live Azure deployment remains pending.
 
 [Spanish guide](docs/GUIA_ES.md) · [Research and design](docs/RESEARCH_ES.md) · [Azure](docs/AZURE.md) · [Model card](docs/MODEL_CARD.md) · [Data card](docs/DATA_CARD.md) · [Interview walkthrough](docs/CV_AND_INTERVIEW_ES.md)
 
@@ -108,9 +108,9 @@ Each completed run contains:
 
 Raw telemetry and outputs are ignored by Git. GitHub Actions uploads only synthetic reports, manifests, coverage and an environment record.
 
-## What is still required before claiming completion
+## Verification evidence and remaining scope
 
-Read [VALIDATION_STATUS.md](docs/VALIDATION_STATUS.md). Green CI must be observed, the resolved dependency environment must be archived, and Azure deployment must be verified against an active Azure for Students subscription. A source upload is not evidence of a successful cloud deployment.
+Read [VALIDATION_STATUS.md](docs/VALIDATION_STATUS.md) for observed checks and remaining limits. [A generated synthetic report](examples/demo/report.html), its JSON metrics and manifest are included for inspection. Azure student access and live deployment are pending.
 
 ## License
 

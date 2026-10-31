@@ -1,0 +1,230 @@
+{
+  "run_id": "f8838216f2a832b085a6",
+  "champion": "hybrid",
+  "capacity": 25,
+  "validation": {
+    "rules": {
+      "windows": 3335,
+      "positive_windows": 144,
+      "prevalence": 0.0431784107946027,
+      "average_precision": 0.8986760103028023,
+      "roc_auc": 0.975791287997493,
+      "precision": 1.0,
+      "recall": 0.2569444444444444,
+      "f1": 0.4088397790055249,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 37,
+      "daily_alerts_mean": 6.166666666666667,
+      "daily_alerts_max": 9,
+      "capacity_per_day": 25,
+      "threshold": 0.5,
+      "confusion_matrix": {
+        "tn": 3191,
+        "fp": 0,
+        "fn": 107,
+        "tp": 37
+      }
+    },
+    "isolation_forest": {
+      "windows": 3335,
+      "positive_windows": 144,
+      "prevalence": 0.0431784107946027,
+      "average_precision": 0.44032270859730077,
+      "roc_auc": 0.930458712002507,
+      "precision": 0.4857142857142857,
+      "recall": 0.3541666666666667,
+      "f1": 0.40963855421686746,
+      "false_positives_per_1000_benign": 16.922594797869007,
+      "alerts": 105,
+      "daily_alerts_mean": 17.5,
+      "daily_alerts_max": 23,
+      "capacity_per_day": 25,
+      "threshold": 0.9839238498149128,
+      "confusion_matrix": {
+        "tn": 3137,
+        "fp": 54,
+        "fn": 93,
+        "tp": 51
+      }
+    },
+    "hybrid": {
+      "windows": 3335,
+      "positive_windows": 144,
+      "prevalence": 0.0431784107946027,
+      "average_precision": 0.8803263098069862,
+      "roc_auc": 0.9749360179671993,
+      "precision": 1.0,
+      "recall": 0.2777777777777778,
+      "f1": 0.43478260869565216,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 40,
+      "daily_alerts_mean": 6.666666666666667,
+      "daily_alerts_max": 10,
+      "capacity_per_day": 25,
+      "threshold": 0.7839450026441037,
+      "confusion_matrix": {
+        "tn": 3191,
+        "fp": 0,
+        "fn": 104,
+        "tp": 40
+      }
+    },
+    "logistic_regression": {
+      "windows": 3335,
+      "positive_windows": 144,
+      "prevalence": 0.0431784107946027,
+      "average_precision": 0.9622678722019041,
+      "roc_auc": 0.9820545631811692,
+      "precision": 1.0,
+      "recall": 0.006944444444444444,
+      "f1": 0.013793103448275862,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 1,
+      "daily_alerts_mean": 0.16666666666666666,
+      "daily_alerts_max": 1,
+      "capacity_per_day": 25,
+      "threshold": 0.9999999958307251,
+      "confusion_matrix": {
+        "tn": 3191,
+        "fp": 0,
+        "fn": 143,
+        "tp": 1
+      }
+    }
+  },
+  "test": {
+    "rules": {
+      "windows": 3350,
+      "positive_windows": 136,
+      "prevalence": 0.04059701492537313,
+      "average_precision": 0.8849311800734433,
+      "roc_auc": 0.9743539294996157,
+      "precision": 1.0,
+      "recall": 0.20588235294117646,
+      "f1": 0.34146341463414637,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 28,
+      "daily_alerts_mean": 4.666666666666667,
+      "daily_alerts_max": 9,
+      "capacity_per_day": 25,
+      "threshold": 0.5,
+      "confusion_matrix": {
+        "tn": 3214,
+        "fp": 0,
+        "fn": 108,
+        "tp": 28
+      }
+    },
+    "isolation_forest": {
+      "windows": 3350,
+      "positive_windows": 136,
+      "prevalence": 0.04059701492537313,
+      "average_precision": 0.3663548665691667,
+      "roc_auc": 0.9186886873604451,
+      "precision": 0.45161290322580644,
+      "recall": 0.3088235294117647,
+      "f1": 0.36681222707423583,
+      "false_positives_per_1000_benign": 15.868077162414437,
+      "alerts": 93,
+      "daily_alerts_mean": 15.5,
+      "daily_alerts_max": 18,
+      "capacity_per_day": 25,
+      "threshold": 0.9839238498149128,
+      "confusion_matrix": {
+        "tn": 3163,
+        "fp": 51,
+        "fn": 94,
+        "tp": 42
+      }
+    },
+    "hybrid": {
+      "windows": 3350,
+      "positive_windows": 136,
+      "prevalence": 0.04059701492537313,
+      "average_precision": 0.8606604349811714,
+      "roc_auc": 0.9732775266298181,
+      "precision": 1.0,
+      "recall": 0.21323529411764705,
+      "f1": 0.3515151515151515,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 29,
+      "daily_alerts_mean": 4.833333333333333,
+      "daily_alerts_max": 9,
+      "capacity_per_day": 25,
+      "threshold": 0.7839450026441037,
+      "confusion_matrix": {
+        "tn": 3214,
+        "fp": 0,
+        "fn": 107,
+        "tp": 29
+      }
+    },
+    "logistic_regression": {
+      "windows": 3350,
+      "positive_windows": 136,
+      "prevalence": 0.04059701492537313,
+      "average_precision": 0.9508128806737719,
+      "roc_auc": 0.9676587265273251,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positives_per_1000_benign": 0.0,
+      "alerts": 0,
+      "daily_alerts_mean": 0.0,
+      "daily_alerts_max": 0,
+      "capacity_per_day": 25,
+      "threshold": 0.9999999958307251,
+      "confusion_matrix": {
+        "tn": 3214,
+        "fp": 0,
+        "fn": 136,
+        "tp": 0
+      }
+    }
+  },
+  "feature_drift_diagnostics": {
+    "events": 0.0021205369447756216,
+    "fail_rate": 9.577899271768794e-05,
+    "destinations": 0.00039675948315273337,
+    "sources": 0.003880597014925373,
+    "countries": 0.018507462686567163,
+    "no_mfa_rate": 0.04208955223880597,
+    "mfa_missing_rate": 0.0,
+    "source_user_fanout": 0.03671641791044776,
+    "new_destination_rate": 0.00417910447761194,
+    "off_hours": 0.9564179104477611
+  },
+  "quality": {
+    "input_lines": 22219,
+    "accepted": 22217,
+    "duplicates": 1,
+    "rejected": 1
+  },
+  "config": {
+    "train_days": 18,
+    "validation_days": 6,
+    "capacity": 25,
+    "seed": 42,
+    "synthetic": true,
+    "version": "0.1.0"
+  },
+  "features": [
+    "events",
+    "fail_rate",
+    "destinations",
+    "sources",
+    "countries",
+    "no_mfa_rate",
+    "mfa_missing_rate",
+    "source_user_fanout",
+    "new_destination_rate",
+    "off_hours"
+  ],
+  "data_notice": "SYNTHETIC DEMONSTRATION. Results measure a simulator and do not establish real-world detection.",
+  "split_boundaries": {
+    "train_last_window_end": "2026-01-23T00:00:00+00:00",
+    "validation_first_window": "2026-01-23T01:30:00+00:00",
+    "validation_last_window_end": "2026-01-28T23:15:00+00:00",
+    "test_first_window": "2026-01-29T00:15:00+00:00"
+  }
+}
