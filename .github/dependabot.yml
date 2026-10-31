@@ -5,6 +5,10 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # These files record completed runs; changing pins alone would falsify that evidence.
+    exclude-paths:
+      - "requirements-verified-*.txt"
+    versioning-strategy: widen
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -15,3 +19,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 3
+    # The container is verified on Python 3.12; runtime migrations need a separate review.
+    ignore:
+      - dependency-name: python
+        versions: [">=3.13"]
