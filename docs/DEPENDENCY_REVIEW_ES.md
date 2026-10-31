@@ -24,10 +24,20 @@ No se silencian avisos y se conserva la consulta de agregación y sus reglas.
 | [#8](https://github.com/krlokbrera/aegislake/pull/8) | PyArrow 26.0.0 | Rango ampliado a `>=21,<27`; validación conjunta en CI |
 | [#3](https://github.com/krlokbrera/aegislake/pull/3) | Python 3.15-slim | Rechazada para este alcance: incumple `requires-python >=3.11,<3.14` y falla la instalación del contenedor |
 
-La CI del cambio conjunto debe verificar Python 3.11/3.12, instalación de dependencias, auditoría,
-las pruebas completas, generación de una demo y ejecución del contenedor sin privilegios. El artefacto
-`environment.txt` registra las versiones resueltas realmente; no se atribuyen resultados a una versión
-solo porque el rango permita instalarla. El enlace de ejecución y los resultados se completan al validar.
+La [CI de compatibilidad conjunta](https://github.com/krlokbrera/aegislake/actions/runs/41230660587)
+verificó 63 pruebas en Python 3.11 y 3.12, con 90 % de cobertura, Ruff correcto y ninguna vulnerabilidad
+conocida detectada por pip-audit en ambos entornos. Las pruebas ya no emiten el aviso de pandas.
+También pasaron la generación de la demo sintética, la compilación de Bicep, la construcción de Docker
+y la ejecución del contenedor como usuario sin privilegios, sin iniciar sesión ni desplegar en Azure.
+
+| Entorno CI | DuckDB | pandas | PyArrow | NumPy | scikit-learn |
+| --- | --- | --- | --- | --- | --- |
+| Python 3.11 | 2.0.0 | 3.1.0 | 26.0.0 | 2.4.6 | 1.9.1 |
+| Python 3.12 | 2.0.0 | 3.1.0 | 26.0.0 | 2.5.4 | 1.9.1 |
+
+Son versiones observadas en los logs, no inferidas de los rangos. El artefacto de la demo de Python 3.12
+incluye su registro completo `environment.txt`. El entorno local de referencia también pasó Ruff y
+las 63 pruebas; no se presenta como la misma combinación de dependencias que la CI.
 
 Los PR originales se cierran como sustituidos por el cambio conjunto después de su integración;
 no se presentan como siete merges individuales. El PR de Azure pendiente queda fuera de esta revisión.
