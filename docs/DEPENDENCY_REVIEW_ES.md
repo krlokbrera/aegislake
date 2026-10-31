@@ -5,6 +5,15 @@ dashboards actual, conservando los SHA completos de las Actions. La versión del
 las referencias de scoring de versiones anteriores deben regenerarse, como exige el control existente.
 No cambia el protocolo de entrenamiento, las reglas, los umbrales ni el presupuesto de revisión.
 
+La primera validación conjunta detectó `Pandas4Warning` dentro de la conversión `fetchdf()` de DuckDB.
+La salida SQL se transfiere ahora mediante `con.sql(...).to_arrow_table().to_pandas()`, una interfaz
+relacional documentada desde DuckDB 1.4. Una regresión adicional trata los avisos como errores y
+comprueba ventanas UTC, etiquetas desconocidas y MFA ausente en la conversión. Las variables de modelo
+se normalizan a float64 para que los decimales de Arrow no entren como objetos en NumPy.
+Se fija además la sesión SQL en UTC: el horario fuera de oficina no debe depender de la zona de la
+máquina. Otra regresión inicia la conexión en Europe/Madrid y comprueba el límite de las 07:00 UTC.
+No se silencian avisos y se conserva la consulta de agregación y sus reglas.
+
 | PR original | Propuesta | Resolución |
 | --- | --- | --- |
 | [#2](https://github.com/krlokbrera/aegislake/pull/2) | checkout 7.0.1 | Aplicada con SHA `3d3c42e5aac5ba805825da76410c181273ba90b1` |
@@ -49,6 +58,7 @@ declarado del paquete ni desactiva la monitorización de la imagen actual.
 - [upload-artifact 7.0.2](https://github.com/actions/upload-artifact/releases/tag/v7.0.2)
 - [pandas 3.1.0](https://pandas.pydata.org/docs/whatsnew/v3.1.0.html)
 - [DuckDB 2.0.0 y cambios de API](https://github.com/duckdb/duckdb-python/releases/tag/v2.0.0)
+- [API relacional de DuckDB 1.4](https://duckdb.org/docs/1.4/clients/python/reference/)
 - [Apache Arrow 26.0.0](https://arrow.apache.org/release/26.0.0.html)
 - [Opciones de Dependabot: exclusiones y rangos](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference)
 - [Fallo de instalación con Python 3.15](https://github.com/krlokbrera/aegislake/actions/runs/41215900094)
