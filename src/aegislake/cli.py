@@ -44,6 +44,9 @@ def main() -> None:
     cloud.add_argument("--run", type=Path, required=True)
     cloud.add_argument("--account", required=True)
     cloud.add_argument("--container", default="reports")
+    web = commands.add_parser("serve", help="Explore completed batches in a local interactive dashboard")
+    web.add_argument("--runs", type=Path, default=Path("runs"))
+    web.add_argument("--port", type=int, default=8767)
     args = parser.parse_args()
     if args.command in {"demo", "run"}:
         if args.command == "demo":
@@ -72,6 +75,10 @@ def main() -> None:
         from aegislake.azure import publish
 
         print(f"Published {len(publish(args.run, args.account, args.container))} private synthetic report objects")
+    elif args.command == "serve":
+        from aegislake.dashboard_server import serve
+
+        serve(args.runs, args.port)
 
 
 if __name__ == "__main__":

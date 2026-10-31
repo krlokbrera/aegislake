@@ -1,10 +1,32 @@
 # AegisLake
 
+> Verified dashboard release 0.2.0: 74 tests pass with 90% measured Python coverage. [Release evidence](https://github.com/krlokbrera/aegislake/actions/runs/41227547021).
+
+## Interactive SOC dashboards
+
+The web interface now includes a native dashboard with linked activity charts, ATT&CK distribution,
+a UTC weekday/hour heatmap, top identities and score distributions. Selecting a chart filters every
+KPI and the investigation queue. It reads actual AegisLake run outputs, with explicit synthetic,
+labeled-evaluation or unlabeled-scoring provenance.
+
+```bash
+aegislake demo --seed 7 --output runs
+aegislake serve --runs runs --port 8767
+# Open http://127.0.0.1:8767/dashboard.html
+```
+
+The local read-only API discovers completed batches without restarting. Optional 30-second polling
+can follow the latest batch, while manual refresh preserves filters for the current batch. Scoring
+batches get their own dashboard without inherited precision/recall. Each run also includes a
+self-contained `dashboard.html`, browser-local JSON import and a portable filtered JSON export.
+This release does not connect to a live SIEM tenant or deploy an Internet-facing web service.
+See the [dashboard guide](docs/DASHBOARDS_ES.md) for data integration, API routes and limits.
+
 **Identity threat analytics: security data engineering, reproducible machine learning, and human-led investigation.**
 
 A portfolio project by Carlo Alessandro Cabrera. AegisLake turns authentication events into a small security data lake, compares detection methods under an analyst workload budget, and produces an offline investigation dashboard.
 
-> Verified synthetic release 0.1.2: 49 tests pass with 91% measured coverage; dependency audit, Bicep build and non-root Docker execution pass. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41222003014). Live Azure deployment remains pending.
+> Previous release 0.1.2: 49 tests passed with 91% measured coverage; dependency audit, Bicep build and non-root Docker execution passed. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41222003014). Live Azure deployment remains pending.
 
 [Spanish guide](docs/GUIA_ES.md) · [Research and design](docs/RESEARCH_ES.md) · [Azure](docs/AZURE.md) · [Model card](docs/MODEL_CARD.md) · [Data card](docs/DATA_CARD.md) · [Interview walkthrough](docs/CV_AND_INTERVIEW_ES.md)
 
@@ -103,6 +125,7 @@ Each completed run contains:
 - `gold/*_features.parquet`: train, validation and test windows.
 - `gold/alerts.json`: evidence queue without ground-truth labels.
 - `report.html`, `mitre.html` and `report.json`: investigation dashboard, curated technique explorer, results and limitations.
+- `dashboard.html` and `dashboard.json`: linked native charts, portable data snapshot and optional local API exploration.
 - `manifest.json`: input hash, configuration, versions and output hashes.
 - `reviews.sqlite`: created when an analyst records a decision.
 

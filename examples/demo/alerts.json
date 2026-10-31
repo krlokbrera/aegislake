@@ -820,7 +820,7 @@
       "Some destinations were absent from the fixed training reference",
       "MFA absent from a material fraction of events"
     ],
-    "score": 0.997160720571385,
+    "score": 0.9971607205713853,
     "user": "employee-0030",
     "window_end": "2026-01-29T19:45:00+00:00",
     "window_start": "2026-01-29T19:30:00+00:00"
@@ -844,7 +844,7 @@
     "reasons": [
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9895245656909921,
+    "score": 0.9895245656909915,
     "user": "employee-0035",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -868,7 +868,7 @@
     "reasons": [
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9895245656909921,
+    "score": 0.9895245656909915,
     "user": "employee-0010",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -892,7 +892,7 @@
     "reasons": [
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9895245656909921,
+    "score": 0.9895245656909915,
     "user": "employee-0039",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -917,7 +917,7 @@
       "MFA absent from a material fraction of events",
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9610380300367806,
+    "score": 0.9610380300367769,
     "user": "employee-0042",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -942,7 +942,7 @@
       "MFA absent from a material fraction of events",
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9556207057873011,
+    "score": 0.9556207057872999,
     "user": "employee-0018",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -967,7 +967,7 @@
       "MFA absent from a material fraction of events",
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9556207057873011,
+    "score": 0.9556207057872999,
     "user": "employee-0043",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -992,7 +992,7 @@
       "MFA absent from a material fraction of events",
       "Activity outside the demo's UTC business-hour convention"
     ],
-    "score": 0.9556207057873011,
+    "score": 0.9556207057872999,
     "user": "employee-0021",
     "window_end": "2026-01-29T01:45:00+00:00",
     "window_start": "2026-01-29T01:30:00+00:00"
@@ -4399,7 +4399,7 @@
       "Some destinations were absent from the fixed training reference",
       "MFA absent from a material fraction of events"
     ],
-    "score": 0.9995228727470158,
+    "score": 0.999522872747016,
     "user": "employee-0011",
     "window_end": "2026-02-01T08:15:00+00:00",
     "window_start": "2026-02-01T08:00:00+00:00"
@@ -5229,7 +5229,7 @@
       "Some destinations were absent from the fixed training reference",
       "MFA absent from a material fraction of events"
     ],
-    "score": 0.997160720571385,
+    "score": 0.9971607205713853,
     "user": "employee-0005",
     "window_end": "2026-02-02T16:15:00+00:00",
     "window_start": "2026-02-02T16:00:00+00:00"
@@ -5253,7 +5253,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.2741981122575338,
+    "score": 0.27419811225754487,
     "user": "employee-0014",
     "window_end": "2026-02-02T13:45:00+00:00",
     "window_start": "2026-02-02T13:30:00+00:00"
@@ -5277,7 +5277,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.2741981122575338,
+    "score": 0.27419811225754487,
     "user": "employee-0008",
     "window_end": "2026-02-02T18:15:00+00:00",
     "window_start": "2026-02-02T18:00:00+00:00"
@@ -5301,7 +5301,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.2741981122575338,
+    "score": 0.27419811225754487,
     "user": "employee-0035",
     "window_end": "2026-02-02T16:30:00+00:00",
     "window_start": "2026-02-02T16:15:00+00:00"
@@ -5325,7 +5325,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.1897142676910902,
+    "score": 0.18971426769109606,
     "user": "employee-0002",
     "window_end": "2026-02-02T16:15:00+00:00",
     "window_start": "2026-02-02T16:00:00+00:00"
@@ -5381,7 +5381,7 @@
       "Identity accessed several destinations within one closed window",
       "MFA absent from a material fraction of events"
     ],
-    "score": 0.18953532532879597,
+    "score": 0.18953532532879747,
     "user": "service-0042",
     "window_end": "2026-02-02T11:15:00+00:00",
     "window_start": "2026-02-02T11:00:00+00:00"
@@ -6262,7 +6262,7 @@
       "Some destinations were absent from the fixed training reference",
       "MFA absent from a material fraction of events"
     ],
-    "score": 0.9989957420692605,
+    "score": 0.9989957420692607,
     "user": "employee-0033",
     "window_end": "2026-02-03T18:15:00+00:00",
     "window_start": "2026-02-03T18:00:00+00:00"
@@ -6286,7 +6286,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.2741981122575338,
+    "score": 0.27419811225754487,
     "user": "employee-0036",
     "window_end": "2026-02-03T16:15:00+00:00",
     "window_start": "2026-02-03T16:00:00+00:00"
@@ -6310,7 +6310,7 @@
     "reasons": [
       "Statistical anomaly; no named rule matched"
     ],
-    "score": 0.2018397012529554,
+    "score": 0.20183970125295972,
     "user": "employee-0048",
     "window_end": "2026-02-03T14:45:00+00:00",
     "window_start": "2026-02-03T14:30:00+00:00"

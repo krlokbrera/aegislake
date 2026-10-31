@@ -11,7 +11,8 @@ from aegislake.scoring import score, verify_run
 def test_end_to_end_manifest_splits_and_idempotency(completed_run):
     source, path = completed_run
     manifest = verify_run(path)
-    assert {"mitre.html", "attack-mapping.json", "dettect-techniques.yaml"} <= manifest["artifacts"].keys()
+    assert {"mitre.html", "dashboard.html", "dashboard.json", "attack-mapping.json",
+            "dettect-techniques.yaml"} <= manifest["artifacts"].keys()
     report = json.loads((path / "report.json").read_text())
     assert report["quality"]["duplicates"] == 1
     assert report["quality"]["rejected"] == 1
@@ -65,12 +66,16 @@ def test_unlabeled_future_scoring_has_no_evaluation_metrics(completed_run, event
     result = json.loads((destination / "scoring.json").read_text())
     assert result["windows"] == 1
     assert result["metrics"] is None
+    dashboard = json.loads((destination / "dashboard.json").read_text())
+    assert dashboard["run"]["data_kind"] == "unlabeled"
+    assert dashboard["run"]["benchmark"] is None
+    assert (destination / "dashboard.html").is_file()
 
 
 @pytest.mark.parametrize("fail_yaml", [False, True])
 def test_cloud_publication_keeps_linked_exports_and_commits_last(completed_run, monkeypatch, fail_yaml):
-    import azure.identity
-    import azure.storage.blob
+    import sys
+    from types import ModuleType, SimpleNamespace
 
     from aegislake.azure import PUBLISH_FILES
 
@@ -105,8 +110,13 @@ def test_cloud_publication_keeps_linked_exports_and_commits_last(completed_run, 
         def get_blob_client(self, container, name):
             return Blob(name)
 
-    monkeypatch.setattr(azure.identity, "DefaultAzureCredential", lambda **kwargs: Credential())
-    monkeypatch.setattr(azure.storage.blob, "BlobServiceClient", Client)
+    # Exercise the SDK protocol without requiring optional cloud packages or credentials locally.
+    modules = {name: ModuleType(name) for name in ("azure", "azure.identity", "azure.storage", "azure.storage.blob")}
+    modules["azure.identity"].DefaultAzureCredential = lambda **kwargs: Credential()
+    modules["azure.storage.blob"].BlobServiceClient = Client
+    modules["azure.storage.blob"].ContentSettings = lambda **kwargs: SimpleNamespace(**kwargs)
+    for name, module in modules.items():
+        monkeypatch.setitem(sys.modules, name, module)
     if fail_yaml:
         with pytest.raises(RuntimeError, match="simulated"):
             publish(path, "aegisexample")

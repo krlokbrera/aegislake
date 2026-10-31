@@ -8,7 +8,7 @@ from pathlib import Path
 
 from aegislake.scoring import verify_run
 
-PUBLISH_FILES = ("report.html", "mitre.html", "report.json", "quality.json", "gold/alerts.json",
+PUBLISH_FILES = ("report.html", "mitre.html", "dashboard.html", "dashboard.json", "report.json", "quality.json", "gold/alerts.json",
                  "attack-mapping.json", "dettect-techniques.yaml")
 
 
