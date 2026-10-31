@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aegislake"
+version = "0.1.0"
+description = "Reproducible identity threat analytics with a security data lake and leakage-aware ML"
+requires-python = ">=3.11,<3.14"
+license = "MIT"
+dependencies = [
+  "duckdb>=1.4,<2",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<3",
+  "pyarrow>=21,<25",
+  "scikit-learn>=1.6,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "pip-audit>=2.9,<3"]
+azure = ["azure-identity>=1.20,<2", "azure-storage-blob>=12.25,<13"]
+
+[project.scripts]
+aegislake = "aegislake.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aegislake"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.coverage.run]
+source = ["aegislake"]
+omit = ["*/cli.py"]
+
+[tool.coverage.report]
+show_missing = true
