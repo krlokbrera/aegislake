@@ -11,6 +11,7 @@ from aegislake.scoring import score, verify_run
 def test_end_to_end_manifest_splits_and_idempotency(completed_run):
     source, path = completed_run
     manifest = verify_run(path)
+    assert {"mitre.html", "attack-mapping.json", "dettect-techniques.yaml"} <= manifest["artifacts"].keys()
     report = json.loads((path / "report.json").read_text())
     assert report["quality"]["duplicates"] == 1
     assert report["quality"]["rejected"] == 1
@@ -64,3 +65,60 @@ def test_unlabeled_future_scoring_has_no_evaluation_metrics(completed_run, event
     result = json.loads((destination / "scoring.json").read_text())
     assert result["windows"] == 1
     assert result["metrics"] is None
+
+
+@pytest.mark.parametrize("fail_yaml", [False, True])
+def test_cloud_publication_keeps_linked_exports_and_commits_last(completed_run, monkeypatch, fail_yaml):
+    import azure.identity
+    import azure.storage.blob
+
+    from aegislake.azure import PUBLISH_FILES
+
+    _, path = completed_run
+    uploads = []
+    closed = []
+
+    class Credential:
+        def close(self):
+            closed.append(True)
+
+    class Blob:
+        def __init__(self, name):
+            self.name = name
+
+        def upload_blob(self, payload, *, overwrite, content_settings):
+            if fail_yaml and self.name.endswith(".yaml"):
+                raise RuntimeError("simulated upload failure")
+            data = payload.read() if hasattr(payload, "read") else payload
+            uploads.append((self.name, data, content_settings.content_type))
+
+    class Client:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            pass
+
+        def get_blob_client(self, container, name):
+            return Blob(name)
+
+    monkeypatch.setattr(azure.identity, "DefaultAzureCredential", lambda **kwargs: Credential())
+    monkeypatch.setattr(azure.storage.blob, "BlobServiceClient", Client)
+    if fail_yaml:
+        with pytest.raises(RuntimeError, match="simulated"):
+            publish(path, "aegisexample")
+        assert not any(name.endswith("publication.json") for name, _, _ in uploads)
+    else:
+        published = publish(path, "aegisexample")
+        assert len(published) == len(PUBLISH_FILES)
+        assert uploads[-1][0].endswith("publication.json")
+        assert json.loads(uploads[-1][1])["files"] == published
+        assert any(name.endswith("mitre.html") and mime == "text/html" for name, _, mime in uploads)
+        assert any(name.endswith("dettect-techniques.yaml") and mime == "application/yaml"
+                   for name, _, mime in uploads)
+        assert any(name.endswith("attack-mapping.json") and mime == "application/json"
+                   for name, _, mime in uploads)
+    assert closed == [True]

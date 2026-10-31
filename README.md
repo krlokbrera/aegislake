@@ -4,7 +4,7 @@
 
 A portfolio project by Carlo Alessandro Cabrera. AegisLake turns authentication events into a small security data lake, compares detection methods under an analyst workload budget, and produces an offline investigation dashboard.
 
-> Verified synthetic demo: 32 tests pass with 87% measured coverage; dependency audit, Bicep build, and non-root Docker execution pass. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41215188019). Live Azure deployment remains pending.
+> Verified synthetic release 0.1.2: 49 tests pass with 91% measured coverage; dependency audit, Bicep build and non-root Docker execution pass. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41222003014). Live Azure deployment remains pending.
 
 [Spanish guide](docs/GUIA_ES.md) · [Research and design](docs/RESEARCH_ES.md) · [Azure](docs/AZURE.md) · [Model card](docs/MODEL_CARD.md) · [Data card](docs/DATA_CARD.md) · [Interview walkthrough](docs/CV_AND_INTERVIEW_ES.md)
 
@@ -37,7 +37,7 @@ python -m pip install ".[dev]"
 aegislake demo --output runs
 ```
 
-The CLI prints the completed run directory. Open its `report.html` in your browser. It is a self-contained, offline report with a searchable investigation queue.
+The CLI prints the completed run directory. Open its `report.html` in your browser. It is a self-contained, offline dashboard with workload charts, model comparisons, searchable evidence and paginated alerts. Open the linked `mitre.html` page to explore the curated ATT&CK map and jump to alerts filtered by technique. Keep the HTML pages and their `attack-mapping.json` and `dettect-techniques.yaml` downloads together. Alerts expose candidate tactic IDs as well as technique IDs. [DeTT&CT integration and scoring scope](docs/DETTCT_ES.md).
 
 Default workload: 30 days, 50 identities, seed 42, 18 training days, six validation days, six test days, and at most 25 queued user windows per test day. These are simulator settings, not organization-wide capacity recommendations.
 
@@ -102,7 +102,7 @@ Each completed run contains:
 - `quarantine/rejected.json` and `quality.json`: disposition accounting.
 - `gold/*_features.parquet`: train, validation and test windows.
 - `gold/alerts.json`: evidence queue without ground-truth labels.
-- `report.html` and `report.json`: results and limitations.
+- `report.html`, `mitre.html` and `report.json`: investigation dashboard, curated technique explorer, results and limitations.
 - `manifest.json`: input hash, configuration, versions and output hashes.
 - `reviews.sqlite`: created when an analyst records a decision.
 

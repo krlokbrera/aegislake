@@ -1,0 +1,3578 @@
+{
+  "schema_version": 1,
+  "run_id": "f108bad8036565a4e2b0",
+  "status": "hypothesis",
+  "metadata_checked": "2026-10-31",
+  "data_notice": "SYNTHETIC DEMONSTRATION. Results measure a simulator and do not establish real-world detection.",
+  "count_semantics": "Unique alert windows per technique. Technique/tactic counts can overlap.",
+  "operational_assessment": "Not performed. DeTT&CT YAML is a draft deployment baseline.",
+  "technique_counts": {
+    "T1110.003": 125,
+    "T1078": 5
+  },
+  "alerts": [
+    {
+      "alert_id": "060d822cf78b8770d696a27b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "07e4bbf5e2a0ae38c0e577d9",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "0fa967f95564c483b43f969a",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "13b2962f36bd221b1472121c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1e773f085c1a0abe45370455",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "21b35fa67290ddddaaac45e9",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "34aed626a23efdd6ef63c98d",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5df7a10a9ddc3dc28053a626",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c57fffd8df75872d7ae2fdf2",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e7df586c6d4cfabdb1cbfe00",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f6bdf42a09d01e4785af3bef",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f77a0b2fb0926395e6b9844b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "2871452a7f9f3adb91441ed6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "558741610ab6a9d6ed725522",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "717f495b2cb5dfd45df45901",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e0a1de60ec119e0b602aefbb",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e80ff6cff903f2b9d1013be6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "803e4e65f825bb46936a1b8b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0001",
+              "tactic_name": "Initial Access"
+            },
+            {
+              "tactic_id": "TA0003",
+              "tactic_name": "Persistence"
+            },
+            {
+              "tactic_id": "TA0004",
+              "tactic_name": "Privilege Escalation"
+            },
+            {
+              "tactic_id": "TA0005",
+              "tactic_name": "Stealth"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "destination"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "54dd4e72533e3e70eb33261f",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "57ffe8e307e5d7bb159653db",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "a2eb4d3052625d30012e2446",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c14080fd20daeccbe15470b5",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "baca7aefd525932fec2cdae4",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "bb98caea0a7604587c519f6e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c06a643689694289066b3264",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "0f55c085655522ef458f6d60",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "204ead10fa7109f03ecb7271",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "33ab3d0d7bc7825f6d3a5e38",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "34330176524d582ae7ce7da1",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "4058104ceba6c6e5bff31d5c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "60a1a80ba3e6bd4f0a3d68bf",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "6fb5ef0baf29f1a1ee4a2223",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "861f7baa2f573960669e3841",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "975bad9ae773866ccb112d61",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "a6a6dbdd172f665cc56d81e2",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "aa88a4a1896899533361acd8",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e3ee42ded8adb8daba22fc77",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e46aba0d05bb1b961bb8a0a5",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "86711b4ac9a3136bda8018fb",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "99ed6600098347572556b084",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "988d0922496f195e7a4014d4",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f4272a17cbb53f81a6faac22",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "26bebdc0740fa81d26daf862",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "81c9b1968eb784ab11ee2e16",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "9092e1a570779861adc2d994",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b210a414514da332317d0005",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e815a9e86e25e58c576d1d22",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f642612bb545c0c39322710c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "cf5819938ebe583366adc50c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e20c124dff91bb7c51e970b8",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "03cb783187a5f10213c51b46",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "09e34f3633282551d99b6bbc",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "11cdf942c5d6afb5221207ec",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "156a631225fe028e5d61f690",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1805e0b4a76f1b222db7139f",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "47fb73c85cfdfeb94a8a1f61",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "51a5132f5f1d0e967ff75e10",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "62bcb89c62b241d1ddedf821",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "6aebbba099d7cd4c71d577c4",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "90474b6d9f5563c36380a589",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "95fe3e2fa64e05f4799215e6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "975b683d63d067616396ec53",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "bb2ce3ea0f9c23ca1f9a90b3",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c9acb7b6a176b22a273cdfb3",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "cab696755474ed2d1c1965d7",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "d34e9b9aff5f5956c2d001e8",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "ede608e31bacd1cee2e43d57",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "a81a1b0b9036d80d640f087e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e1d37ce85a3b7a677a847b12",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "45e1a734eca5588ab1ebde2f",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "52231f749fb91725077aeb80",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5a1fedea54a0081bef4b814d",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b9d9f6569b4bd1e8fdceb221",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "dadbc1dfd8cdb6f536ef5a96",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "ec4424bcbc79edb6813fd73a",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1d2c6aa1055e98034e1a98e0",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "2d3c07defc195324d457bc6a",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "883512f1402eb10cbc497d8d",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "8a64978b7e9f4503bad5f23b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "8aa8351c580b0dd39fc1d104",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "93f64598ca0813fc3a03b394",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "9c588dea8ee97b1b8158cc22",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "df10c40a445e9330b4e4f1de",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "dfb770b42a3a9f4bc7d7f8ad",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e0e4a4fc3a45fc731208ff1b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f49471e13a804c97d06652aa",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "ff4118bc443a4e0f6c4c7b89",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "3d278fa30ca34b6102dd5edb",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "4563cd56b7398a2169612bda",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "91b17b24f1a3f493cbf50c59",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "e4bda0a103a443849e645af7",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "18180d93e47df59d93e87b77",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f82b170b283d1d5d81b094bd",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f3088c69dd10782d458962df",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5229641b4a27efd6dfca9c58",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "7a8a8c88189fc56ef7f0f38d",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "918e228d6f98f155390ec9f4",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b6e4f199a0b36bdd143b24ce",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "568182500dd53a9a1b9f91b1",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "0c9844013e18b37ab8d5327e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0001",
+              "tactic_name": "Initial Access"
+            },
+            {
+              "tactic_id": "TA0003",
+              "tactic_name": "Persistence"
+            },
+            {
+              "tactic_id": "TA0004",
+              "tactic_name": "Privilege Escalation"
+            },
+            {
+              "tactic_id": "TA0005",
+              "tactic_name": "Stealth"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "destination"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "297120b5edd4306556b730c6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "59a3a7512239347254acf6c2",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b64ec228fa1da2ee0cf96d43",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c354572782ce53a22b051f65",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c5a10c51fddf7bc13d101d0a",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "d63c2ad9e2040ac25133125b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "d9712f8877f6772a64cf7119",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "31629f02ab9a7e26e311ffe7",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "9da64067bdbad82c40acc16e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b26760693c8494e1980f1ae0",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1d9e296585ade4a5618f4c60",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "3a3c27d823bf6bfa7fcbd283",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "3e5dbaddadf15101ebc8bd38",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "4893492404e4de3b76155f4c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "573fb84a5df6b630678c5cf9",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "cd5a8e009ad4a9253efe2a69",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "322ff8eba27e861b430d2a54",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "56c70a21f32400443e86ac3e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0001",
+              "tactic_name": "Initial Access"
+            },
+            {
+              "tactic_id": "TA0003",
+              "tactic_name": "Persistence"
+            },
+            {
+              "tactic_id": "TA0004",
+              "tactic_name": "Privilege Escalation"
+            },
+            {
+              "tactic_id": "TA0005",
+              "tactic_name": "Stealth"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "destination"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "137816f2681c825083527df8",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "375ad6f32554735986fa6d7e",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "83935070c9660d7ecfb12db6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5537288ec5e364701738f3b3",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "4ffa54d15fbc3dd66f9a2d4b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0001",
+              "tactic_name": "Initial Access"
+            },
+            {
+              "tactic_id": "TA0003",
+              "tactic_name": "Persistence"
+            },
+            {
+              "tactic_id": "TA0004",
+              "tactic_name": "Privilege Escalation"
+            },
+            {
+              "tactic_id": "TA0005",
+              "tactic_name": "Stealth"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "destination"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "7d37d361a1eefdcc4f781289",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b4fe35a6ad934984522ef9ae",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "59dcc2bfa9ba87f17691642b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "0444f7552b7736dbcf16f6bb",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1a1951d0732724a4acb06301",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "1c5c4b6d0a2e41a7a5bbc539",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "342630a5217b6d785b67859c",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "58bdea0d2ce0ced8f31335bc",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "9a001a1ccd175847cc93bab2",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b6a58e7de6948c44349fd4e7",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "c9095ee068ee1889e26bd246",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f254e288b247f25d68caaaa1",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f4585a5ea34597d676e844e3",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "f715455932308c8c39923c74",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "b7aa22e2b9f0de6f54d0dff2",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "66a0489fc9866f53304ad419",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "bcff1e45bed5326c3abbbd63",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5522b10c1ef3a47cf329cdf3",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "5c09dc92f0c44fdeea0a27a6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "dfc5ba7a03abec03833f019d",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1110.003",
+          "technique_name": "Password Spraying",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0006",
+              "tactic_name": "Credential Access"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "source",
+            "success"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1110/003/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "842f0a2a4c026caf15efaf50",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "candidate_tactics": [
+            {
+              "tactic_id": "TA0001",
+              "tactic_name": "Initial Access"
+            },
+            {
+              "tactic_id": "TA0003",
+              "tactic_name": "Persistence"
+            },
+            {
+              "tactic_id": "TA0004",
+              "tactic_name": "Privilege Escalation"
+            },
+            {
+              "tactic_id": "TA0005",
+              "tactic_name": "Stealth"
+            }
+          ],
+          "required_fields": [
+            "timestamp",
+            "user",
+            "destination"
+          ],
+          "reference": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "0a815163b604f1a368b4028b",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    },
+    {
+      "alert_id": "7390238a94bbae0743ccf0b6",
+      "status": "hypothesis",
+      "metadata_checked": "2026-10-31",
+      "tactic_semantics": "Catalog membership; objectives are not established by the signal.",
+      "techniques": [],
+      "unmapped_technique_ids": []
+    }
+  ]
+}

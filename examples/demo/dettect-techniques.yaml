@@ -1,0 +1,57 @@
+version: 1.2
+file_type: "technique-administration"
+name: "AegisLake candidate identity detections - DRAFT"
+domain: "enterprise-attack"
+platform: "all"
+notes: "DRAFT operational baseline, not an assessment of an existing SOC. No deployed detector or validated production visibility has been registered. Detection -1 means no detection; visibility 0 means no registered visibility. Review and replace these conservative placeholders before operational use. Alert counts and synthetic ML metrics do not set scores."
+techniques:
+  -
+    technique_id: "T1110.003"
+    technique_name: "Password Spraying"
+    detection:
+      -
+        applicable_to:
+          - "Unassessed SOC deployment (AegisLake candidate)"
+        location: []
+        comment: "Prototype signal: Shared source reaches at least 8 identities and the failure rate is at least 50%. Required canonical fields: timestamp, user, source, success. No production assessment recorded."
+        score_logbook:
+          -
+            date: null
+            score: -1
+            comment: "DRAFT operational baseline, not an assessment of an existing SOC. No deployed detector or validated production visibility has been registered. Detection -1 means no detection; visibility 0 means no registered visibility. Review and replace these conservative placeholders before operational use. Alert counts and synthetic ML metrics do not set scores."
+    visibility:
+      -
+        applicable_to:
+          - "Unassessed SOC deployment (AegisLake candidate)"
+        comment: "Prototype signal: Shared source reaches at least 8 identities and the failure rate is at least 50%. Required canonical fields: timestamp, user, source, success. No production assessment recorded."
+        score_logbook:
+          -
+            date: null
+            score: 0
+            comment: "DRAFT operational baseline, not an assessment of an existing SOC. No deployed detector or validated production visibility has been registered. Detection -1 means no detection; visibility 0 means no registered visibility. Review and replace these conservative placeholders before operational use. Alert counts and synthetic ML metrics do not set scores."
+            auto_generated: false
+  -
+    technique_id: "T1078"
+    technique_name: "Valid Accounts"
+    detection:
+      -
+        applicable_to:
+          - "Unassessed SOC deployment (AegisLake candidate)"
+        location: []
+        comment: "Prototype signal: An identity reaches at least 4 destinations in one closed 15-minute window. Required canonical fields: timestamp, user, destination. No production assessment recorded."
+        score_logbook:
+          -
+            date: null
+            score: -1
+            comment: "DRAFT operational baseline, not an assessment of an existing SOC. No deployed detector or validated production visibility has been registered. Detection -1 means no detection; visibility 0 means no registered visibility. Review and replace these conservative placeholders before operational use. Alert counts and synthetic ML metrics do not set scores."
+    visibility:
+      -
+        applicable_to:
+          - "Unassessed SOC deployment (AegisLake candidate)"
+        comment: "Prototype signal: An identity reaches at least 4 destinations in one closed 15-minute window. Required canonical fields: timestamp, user, destination. No production assessment recorded."
+        score_logbook:
+          -
+            date: null
+            score: 0
+            comment: "DRAFT operational baseline, not an assessment of an existing SOC. No deployed detector or validated production visibility has been registered. Detection -1 means no detection; visibility 0 means no registered visibility. Review and replace these conservative placeholders before operational use. Alert counts and synthetic ML metrics do not set scores."
+            auto_generated: false
