@@ -229,3 +229,25 @@ def test_repeated_analysis_preserves_the_reviewed_hash(lab):
     cycle.analyze(root, RUN)
     assert cycle.digest(root / "archives" / RUN / "analysis.json") == reviewed["analysis_sha256"]
     assert cycle.gate(root, repo, now=LATER, remote=lambda *a: True)["allowed"]
+
+
+
+def test_installer_rejects_commit_substitution():
+    spec = importlib.util.spec_from_file_location("install_cycle", SCRIPTS / "install_lab_cycle.py")
+    installer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(installer)
+    with pytest.raises(ValueError):
+        installer.guest_script("main; touch /tmp/unsafe")
+    script = installer.guest_script(COMMIT)
+    assert "disable','--now','aegis-activity.timer" in script
+    assert "start','aegis-activity.service" not in script
+
+
+def test_github_validation_accepts_matching_successful_run(monkeypatch):
+    def response(request, timeout):
+        payload = ({"head": {"sha": COMMIT}} if "/pulls/" in request.full_url else
+                   {"head_sha": COMMIT, "status": "completed", "conclusion": "success",
+                    "path": ".github/workflows/ci.yml"})
+        return io.BytesIO(json.dumps(payload).encode())
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", response)
+    assert cycle.github_validation(COMMIT, 15, 123) is True
