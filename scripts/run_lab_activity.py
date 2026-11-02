@@ -15,10 +15,15 @@ import subprocess
 import sys
 import time
 
+from lab_cycle import atomic_json, gate, provenance, seal
+
 TARGET = "10.77.0.5"
 ROOT = Path("/var/lib/aegislake")
 CONFIG = Path("/etc/aegislake")
 INTERVAL_SECONDS = 48 * 3600
+REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO / "src"))
+
 
 
 def due(previous, now):
@@ -59,7 +64,7 @@ def analyze_auth_events(source, destination):
 
 
 def export_alerts(folder, started):
-    sys.path.insert(0, "/opt/aegislake/src")
+    sys.path.insert(0, str(REPO / "src"))
     from aegislake.wazuh import adapt_alerts
 
     source = Path("/var/ossec/logs/alerts/alerts.json")
@@ -96,10 +101,47 @@ def export_alerts(folder, started):
     }
 
 
+
+def perform_activity(folder, now):
+    steps = []
+    scenarios = [("aegis-lab", "baseline")]
+    scenarios.extend((f"aegis-probe-{i}", "baseline") for i in range(8))
+    scenarios.append(("aegis-lab", "fim"))
+    for user, action in scenarios:
+        at = datetime.now(timezone.utc).isoformat()
+        try:
+            result = subprocess.run(
+                ssh_args(user, action), capture_output=True, text=True, timeout=15,
+                check=False,
+            )
+            step = {"at": at, "user": user, "action": action, "returncode": result.returncode,
+                    "expected_success": user == "aegis-lab",
+                    "stdout": result.stdout[:1000], "stderr": result.stderr[:1000]}
+        except subprocess.TimeoutExpired:
+            step = {"at": at, "user": user, "action": action, "returncode": None,
+                    "expected_success": user == "aegis-lab", "timeout": True}
+        steps.append(step)
+        atomic_json(folder / "ground-truth.json",
+                    {"started_unix": now, "scope": "owned-private-lab-only", "steps": steps})
+        time.sleep(1)
+    time.sleep(45)
+    summary = export_alerts(folder, now)
+    summary["sessions"] = len(steps)
+    summary["expected_successful_sessions"] = 2
+    summary["observed_successful_sessions"] = sum(s["returncode"] == 0 for s in steps)
+    summary["expected_rejected_sessions"] = 8
+    summary["observed_rejected_sessions"] = sum(
+        s["returncode"] == 255 for s in steps if not s["expected_success"])
+    summary["run"] = folder.name
+    atomic_json(folder / "summary.json", summary)
+    print(json.dumps(summary))
+    if summary["observed_successful_sessions"] != 2:
+        raise RuntimeError("Lab SSH session failed; inspect private ground truth")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--force", action="store_true", help="Run a manual drill despite cadence")
-    args = parser.parse_args()
+    parser.parse_args()
     os.umask(0o077)
     evidence = ROOT / "evidence"
     evidence.mkdir(parents=True, exist_ok=True)
@@ -108,50 +150,38 @@ def main():
         state = evidence / "last-activity-attempt.json"
         now = time.time()
         previous = json.loads(state.read_text())["unix"] if state.exists() else None
-        if not args.force and not due(previous, now):
+        if not due(previous, now):
             print(json.dumps({"status": "not_due", "minimum_interval_hours": 48}))
+            return
+        release = gate(ROOT, REPO)
+        if not release["allowed"]:
+            print(json.dumps({"status": "blocked_pending_cycle_review", **release}))
             return
         for required in ["activity_ed25519", "known_hosts"]:
             if not (CONFIG / required).is_file():
                 raise RuntimeError("Missing private lab SSH configuration")
-        state.write_text(json.dumps({"unix": now, "utc": datetime.now(timezone.utc).isoformat()}))
         name = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         folder = ROOT / "runs" / ("activity-" + name)
         folder.mkdir(parents=True, exist_ok=False)
-        steps = []
-        scenarios = [("aegis-lab", "baseline")]
-        scenarios.extend((f"aegis-probe-{i}", "baseline") for i in range(8))
-        scenarios.append(("aegis-lab", "fim"))
-        for user, action in scenarios:
-            at = datetime.now(timezone.utc).isoformat()
-            try:
-                result = subprocess.run(
-                    ssh_args(user, action), capture_output=True, text=True, timeout=15,
-                    check=False,
-                )
-                step = {"at": at, "user": user, "action": action, "returncode": result.returncode,
-                        "expected_success": user == "aegis-lab",
-                        "stdout": result.stdout[:1000], "stderr": result.stderr[:1000]}
-            except subprocess.TimeoutExpired:
-                step = {"at": at, "user": user, "action": action, "returncode": None,
-                        "expected_success": user == "aegis-lab", "timeout": True}
-            steps.append(step)
-            (folder / "ground-truth.json").write_text(json.dumps(
-                {"started_unix": now, "scope": "owned-private-lab-only", "steps": steps}, indent=2))
-            time.sleep(1)
-        time.sleep(45)
-        summary = export_alerts(folder, now)
-        summary["sessions"] = len(steps)
-        summary["expected_successful_sessions"] = 2
-        summary["observed_successful_sessions"] = sum(s["returncode"] == 0 for s in steps)
-        summary["expected_rejected_sessions"] = 8
-        summary["observed_rejected_sessions"] = sum(
-            s["returncode"] == 255 for s in steps if not s["expected_success"])
-        summary["run"] = folder.name
-        (folder / "summary.json").write_text(json.dumps(summary, indent=2))
-        print(json.dumps(summary))
-        if summary["observed_successful_sessions"] != 2:
-            raise RuntimeError("Lab SSH session failed; inspect private ground truth")
+        atomic_json(folder / "run-metadata.json", {
+            **provenance(REPO),
+            "started_unix": now, "previous_reviewed_cycle": release["run_id"],
+        })
+        atomic_json(folder / "ground-truth.json",
+                    {"started_unix": now, "scope": "owned-private-lab-only", "steps": []})
+        atomic_json(state, {"unix": now, "utc": datetime.now(timezone.utc).isoformat(),
+                            "run_id": folder.name})
+        try:
+            perform_activity(folder, now)
+        except Exception as error:
+            atomic_json(folder / "failure.json", {"error_type": type(error).__name__})
+            raise
+        finally:
+            manifest = seal(ROOT, folder)
+            atomic_json(evidence / "iteration-state.json", {
+                "run_id": folder.name, "status": "needs_analysis_and_review",
+                "review_due_date": manifest["review_due_date"], "complete": manifest["complete"],
+            })
 
 
 if __name__ == "__main__":

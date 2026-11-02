@@ -3,6 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 import pytest
 
@@ -10,6 +11,7 @@ SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
 
 def module(name):
+    sys.path.insert(0, str(SCRIPTS))
     spec = importlib.util.spec_from_file_location(name, SCRIPTS / (name + ".py"))
     result = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(result)
