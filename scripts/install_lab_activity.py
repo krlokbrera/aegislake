@@ -104,6 +104,10 @@ os.chown(keys,account.pw_uid,account.pw_gid)
 marker=Path('/var/lib/aegislake/monitored/marker.txt')
 os.chown(marker,account.pw_uid,account.pw_gid)
 marker.chmod(0o640)
+# Permit traversal to this one monitored file; evidence subdirectories stay private.
+for directory in [marker.parent.parent,marker.parent]:
+    os.chown(directory,0,account.pw_gid)
+    directory.chmod(0o710)
 subprocess.run(['systemctl','enable','--now','ssh.socket'],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
 print('restricted-lab-account-ready')
 """
