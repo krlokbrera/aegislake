@@ -45,6 +45,19 @@ def ssh_args(user, command):
     ]
 
 
+def analyze_auth_events(source, destination):
+    from aegislake.lake import ingest
+
+    frame, quality = ingest(source, destination)
+    return {
+        "quality": quality, "users": int(frame["user"].nunique()),
+        "sources": int(frame["source"].nunique()),
+        "successful_auth_events": int(frame["success"].eq(True).sum()),
+        "failed_auth_events": int(frame["success"].eq(False).sum()),
+        "effectiveness_measured": False,
+    }
+
+
 def export_alerts(folder, started):
     sys.path.insert(0, "/opt/aegislake/src")
     from aegislake.wazuh import adapt_alerts
@@ -75,8 +88,9 @@ def export_alerts(folder, started):
         with os.fdopen(descriptor, "wb") as stream:
             stream.write(secrets.token_bytes(32))
     quality = adapt_alerts(raw, folder / "auth-events.ndjson", key_file.read_bytes())
+    lake = analyze_auth_events(folder / "auth-events.ndjson", folder / "lake") if quality["auth_events"] else None
     return {
-        "rule_counts": counts, "auth_adapter": quality,
+        "rule_counts": counts, "auth_adapter": quality, "lake": lake,
         "first_alert_seconds": max(0, min(event_times) - started) if event_times else None,
         "interpretation": "Controlled lab telemetry; attack effectiveness and ML accuracy unmeasured.",
     }
