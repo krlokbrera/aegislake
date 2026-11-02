@@ -176,10 +176,18 @@ def archived_json(root, run_id, name):
 
 def analyze(root, run_id):
     manifest = verify_archive(root, run_id)
+    report_path = archive_dir(root, run_id) / "analysis.json"
+    manifest_hash = digest(archive_dir(root, run_id) / "manifest.json")
+    if report_path.exists():
+        previous = read_json(report_path)
+        if previous.get("run_id") != run_id or previous.get("manifest_sha256") != manifest_hash:
+            raise ValueError("Existing analysis describes different evidence")
+        return previous
     summary = archived_json(root, run_id, "summary.json") if "summary.json" in manifest["files"] else {}
     truth = archived_json(root, run_id, "ground-truth.json")
     result = {
         "run_id": run_id, "archive_complete": manifest["complete"],
+        "manifest_sha256": manifest_hash,
         "review_due_date": manifest["review_due_date"],
         "sessions_recorded": len(truth.get("steps", [])),
         "successful_sessions": summary.get("observed_successful_sessions"),
