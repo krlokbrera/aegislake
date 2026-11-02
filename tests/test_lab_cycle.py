@@ -251,3 +251,13 @@ def test_github_validation_accepts_matching_successful_run(monkeypatch):
         return io.BytesIO(json.dumps(payload).encode())
     monkeypatch.setattr(cycle.urllib.request, "urlopen", response)
     assert cycle.github_validation(COMMIT, 15, 123) is True
+
+
+
+def test_incomplete_staging_directory_cannot_duplicate_a_finished_archive(lab):
+    root, repo, folder = lab
+    ready(lab)
+    staging = root / "archives" / (RUN + ".pending-interrupted")
+    staging.mkdir()
+    (staging / "manifest.json").write_bytes((root / "archives" / RUN / "manifest.json").read_bytes())
+    assert cycle.gate(root, repo, now=LATER, remote=lambda *a: True)["allowed"]
