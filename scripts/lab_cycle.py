@@ -262,6 +262,8 @@ def gate(root, repo, now=None, remote=github_validation):
         attempt = read_json(root / "evidence" / "last-activity-attempt.json")
         candidates = []
         for path in (root / "archives").glob("activity-*/manifest.json"):
+            if not RUN_ID.fullmatch(path.parent.name):
+                continue
             manifest = read_json(path)
             if abs(manifest["started_unix"] - float(attempt["unix"])) < 2:
                 candidates.append(manifest["run_id"])
