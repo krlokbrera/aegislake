@@ -64,3 +64,24 @@ def test_missing_guest_markers_are_rejected(monkeypatch):
         a, 0, json.dumps(response), ""))
     with pytest.raises(RuntimeError, match="Unexpected Run Command"):
         installer.invoke("test", "aegis-wazuh", "echo ready")
+
+
+
+def test_real_adapter_to_partitioned_lake_preserves_unknown_fields(tmp_path):
+    from aegislake.wazuh import adapt_alerts
+
+    source = tmp_path / "alerts.ndjson"
+    raw = {"timestamp": "2026-11-02T12:00:00Z", "agent": {"name": "test-host"},
+           "decoder": {"name": "sshd"},
+           "full_log": "Nov 2 12:00:00 test-host sshd[123]: Accepted publickey for test-user from 10.77.0.4 port 12345 ssh2"}
+    source.write_text(json.dumps(raw) + "\n")
+    canonical = tmp_path / "auth.ndjson"
+    adapt_alerts(source, canonical, b"x" * 32)
+    result = activity.analyze_auth_events(canonical, tmp_path / "lake")
+    assert result["quality"] == {"input_lines": 1, "accepted": 1, "duplicates": 0, "rejected": 0}
+    assert result["successful_auth_events"] == 1
+    assert result["effectiveness_measured"] is False
+    assert len(list((tmp_path / "lake/silver").glob("event_date=*/events.parquet"))) == 1
+    event = json.loads(canonical.read_text())
+    assert event["mfa"] is None and event["country"] == "unknown" and event["label"] is None
+    assert "test-user" not in canonical.read_text()
