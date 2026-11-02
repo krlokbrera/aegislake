@@ -67,7 +67,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Compile Bicep without signing in or deploying
-        run: az bicep build --file infra/main.bicep --stdout > /tmp/aegislake-template.json
+        run: |
+          az bicep build --file infra/main.bicep --stdout > /tmp/aegislake-template.json
+          az bicep build --file infra/lab.bicep --stdout > /tmp/aegislake-lab-template.json
+          bash -n scripts/bootstrap-wazuh.sh
+          bash -n scripts/bootstrap-endpoint.sh
       - name: Build non-root container
         run: docker build --tag aegislake:ci .
       - name: Run container as its non-root user

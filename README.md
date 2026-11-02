@@ -6,6 +6,20 @@ remain unchanged. [Dependabot review and compatibility decisions](docs/DEPENDENC
 
 > Verified dashboard release 0.2.0: 61 regression tests pass with 90% measured Python coverage. [Release evidence](https://github.com/krlokbrera/aegislake/actions/runs/41227547021).
 
+## Private Wazuh lab
+
+A private Azure lab was deployed on 2 November 2026: Wazuh manager/indexer/dashboard,
+one Ubuntu endpoint, bounded SSH/FIM activity every 48 hours and an independent hourly
+credit guard. The functional drill produced 18 native Wazuh alerts and 10 pseudonymized
+authentication events, all accepted into bronze/silver Parquet. The managed identity
+successfully deallocated both VMs in a live drill; the operator then resumed them.
+
+These are controlled lab logs. Production detection effectiveness and ML accuracy remain
+unmeasured. The conservative stop allowance includes a EUR 10 reserve, delayed billing
+and retained disks; it does not promise an exact EUR 10 balance.
+[Deployment, access and costs](docs/AZURE_WAZUH_LAB_ES.md) ·
+[Observed functional evidence](docs/LAB_VERIFICATION_2026-11-02.md)
+
 ## Interactive SOC dashboards
 
 The web interface now includes a native dashboard with linked activity charts, ATT&CK distribution,
@@ -23,14 +37,14 @@ The local read-only API discovers completed batches without restarting. Optional
 can follow the latest batch, while manual refresh preserves filters for the current batch. Scoring
 batches get their own dashboard without inherited precision/recall. Each run also includes a
 self-contained `dashboard.html`, browser-local JSON import and a portable filtered JSON export.
-This release does not connect to a live SIEM tenant or deploy an Internet-facing web service.
+The dashboard reads local completed batches and does not expose an Internet-facing service. The separate Wazuh lab adapter now ingests native SSH alerts into a private lake; its raw activity folders are not completed ML scoring dashboards.
 See the [dashboard guide](docs/DASHBOARDS_ES.md) for data integration, API routes and limits.
 
 **Identity threat analytics: security data engineering, reproducible machine learning, and human-led investigation.**
 
 A portfolio project by Carlo Alessandro Cabrera. AegisLake turns authentication events into a small security data lake, compares detection methods under an analyst workload budget, and produces an offline investigation dashboard.
 
-> Previous release 0.1.2: 49 tests passed with 91% measured coverage; dependency audit, Bicep build and non-root Docker execution passed. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41222003014). Live Azure deployment remains pending.
+> Previous release 0.1.2: 49 tests passed with 91% measured coverage; dependency audit, Bicep build and non-root Docker execution passed. [Execution evidence](https://github.com/krlokbrera/aegislake/actions/runs/41222003014). That historical release preceded the private Wazuh lab documented above.
 
 [Spanish guide](docs/GUIA_ES.md) · [Research and design](docs/RESEARCH_ES.md) · [Azure](docs/AZURE.md) · [Model card](docs/MODEL_CARD.md) · [Data card](docs/DATA_CARD.md) · [Interview walkthrough](docs/CV_AND_INTERVIEW_ES.md)
 
